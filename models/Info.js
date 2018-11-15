@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 const Info = new Schema({
     name: String,
     synopsis: String,
-    date: Date,
+    role: String,
+    year: Number,
     location: String,
     image: String,
     awards: String
