@@ -9,10 +9,8 @@ const User = new Schema({
     image: String,
     films: [
       {
-        
-        type: String,
+        type: Schema.Types.ObjectId,
         ref: "Film"
-    
       }
     ]
   })

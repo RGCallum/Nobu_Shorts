@@ -5,7 +5,7 @@ const Film = new Schema({
     name: String,
     image: String,
     link: String,
-    Info: [
+    info: [
         {
           
           type: Schema.Types.ObjectId,

@@ -13,7 +13,7 @@ const info1 = new Info({
 })
 
 const info2 = new Info({
-    name: "Oh Shh",
+    name: "GTW",
     synopsis: "Lorem ipsum dolor sit amet, consectetur",
     date: 4/20/18,
     location: "Brooklyn NY",
@@ -33,13 +33,20 @@ const film2 = new Film({
     info: [info1, info2]
 })
 
+const film3 = new Film({
+    name: "Back to the Future",
+    image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
+    info: [info2]
+})
+
 const user1 = new User({
     username: "India G",
     password: "1234",
     email: "sceneitpix@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/IndiaGPic.png",
-    films: [OhShh, GTW, Unthinkable]
+    films: [film1, film2]
 })
 const user2 = new User({
     username: "Dave W",
@@ -47,7 +54,7 @@ const user2 = new User({
     email: "dozwall@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/DavePic2.png",
-    films: [film1, film2]
+    films: [film3]
 })
 const user3 = new User({
     username: "Kirk R",
@@ -55,7 +62,7 @@ const user3 = new User({
     email: "kirkrevil@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/KirkRPic.png",
-    films: [Seance, Invisible]
+    films: [film1, film2]
 })
 const user4 = new User({
     username: "Alex E",
