@@ -1,10 +1,9 @@
 const User = require('../models/User.js')
 const Film = require('../models/Film.js')
 const Info = require('../models/Info.js')
-
 const mongoose = require('./connections')
 
-const myfilminfo = new Info({
+const info1 = new Info({
     name: "Oh Shh",
     synopsis: "Lorem ipsum dolor sit amet, consectetur",
     date: 4/20/18,
@@ -13,11 +12,25 @@ const myfilminfo = new Info({
     awards: "Bronze Telly Award, BC Best Screenwriter Award"
 })
 
-const myfilm = new Film({
+const info2 = new Info({
+    name: "Oh Shh",
+    synopsis: "Lorem ipsum dolor sit amet, consectetur",
+    date: 4/20/18,
+    location: "Brooklyn NY",
+    image: "/images/filmstrip.png",
+    awards: "Bronze Telly Award, BC Best Screenwriter Award"
+})
+const film1 = new Film({
     name: "Oh Shh",
     image: "/images/clapper.png",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: "Lorem ipsum dolor sit amet, consectetur"
+    info: [info1, info2]
+})
+const film2 = new Film({
+    name: "GTW",
+    image: "/images/clapper.png",
+    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
+    info: [info1, info2]
 })
 
 const user1 = new User({
@@ -34,7 +47,7 @@ const user2 = new User({
     email: "dozwall@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/DavePic2.png",
-    films: [film1, film2, film3]
+    films: [film1, film2]
 })
 const user3 = new User({
     username: "Kirk R",
@@ -42,7 +55,7 @@ const user3 = new User({
     email: "kirkrevil@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/KirkRPic.png",
-    films: [Seance, Invisible, film3]
+    films: [Seance, Invisible]
 })
 const user4 = new User({
     username: "Alex E",
@@ -50,7 +63,7 @@ const user4 = new User({
     email: "alex@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/AlexPic.png",
-    films: [film1, film2, film3]
+    films: [film1, film2]
 })
 const user5 = new User({
     username: "Lande Y",
@@ -58,15 +71,15 @@ const user5 = new User({
     email: "lande@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     image: "/images/LandePic.png",
-    films: [film1, film2, film3]
+    films: [film1, film2]
 })
 
 
 User.remove({})
     .then(() => Film.remove({}))
     .then(() => Info.remove({}))
-    .then(() => Film.insertMany(myfilm))
-    .then(() => Info.insertMany(myfilminfo))
+    .then(() => Film.insertMany(film1, film2))
+    .then(() => Info.insertMany(info1, info2))
     .then(() => user1.save())
     .then(() => user2.save())
     .then(() => user3.save())
