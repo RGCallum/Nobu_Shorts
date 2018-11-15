@@ -10,7 +10,7 @@ const User = new Schema({
     films: [
       {
         
-        name: Schema.Types.ObjectId,
+        type: String,
         ref: "Film"
     
       }
