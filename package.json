@@ -1,9 +1,11 @@
 {
   "name": "nobu_shorts",
   "version": "1.0.0",
-  "description": "",
+  "description": "yep",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +20,7 @@
   "homepage": "https://github.com/RGCallum/Nobu_Shorts#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "mongoose": "^5.3.12"
