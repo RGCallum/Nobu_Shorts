@@ -5,6 +5,7 @@ const Info = new Schema({
     name: String,
     synopsis: String,
     role: String,
+    type: String,
     year: Number,
     location: String,
     image: String,
