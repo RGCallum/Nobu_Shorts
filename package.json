@@ -21,8 +21,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
+    "dependencies": "0.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
-    "mongoose": "^5.3.12"
+    "mongoose": "^5.3.12",
+    "peer": "^0.2.10",
+    "react-router-dom": "^4.3.1"
   }
 }
