@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Splash from './components/Splash'
+import Home from './components/Home'
 import NavBar from './components/NavBar'
+import Films from './components/Films'
+import Users from './components/Users'
+
 
 
 
@@ -12,7 +15,9 @@ class App extends Component {
         <div>
           <NavBar />
           <Switch>
-            <Route path="/" component={Splash}/>
+            <Route path="/" component={Home}/>
+            <Route exact path="/user" component={Users}/>
+            <Route exact path="/films/:filmId" component={Films}/>
           </Switch>
         </div>
       </Router>

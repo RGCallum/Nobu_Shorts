@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Splash extends Component {
+class Home extends Component {
     render() {
         return (
             <div>
-                Splash
+                Home page?
             </div>
         );
     }
 }
 
-export default Splash;
+export default Home;

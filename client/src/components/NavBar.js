@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios'
+
 import {Link} from 'react-router-dom'
 // import styled from 'styled-components'
 
@@ -34,6 +36,10 @@ class NavBar extends Component {
         // <NavBarStyles>
             <div>
           <Link to="/"> 🏠 Home</Link>
+          <Link to="/films"> Films</Link>
+          <Link to="/users"> Users</Link>
+
+
           </div>
           
         // </NavBarStyles>

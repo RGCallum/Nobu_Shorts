@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RGCallum/Nobu_Shorts#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "dependencies": "0.0.1",
