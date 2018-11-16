@@ -4,6 +4,8 @@ import Home from './components/Home'
 import NavBar from './components/NavBar'
 import Films from './components/Films'
 import Users from './components/Users'
+import Info from './components/Info'
+
 
 
 
@@ -15,9 +17,10 @@ class App extends Component {
         <div>
           <NavBar />
           <Switch>
+            <Route exact path="/users" component={Users}/>
+            <Route exact path="/films" component={Films}/>
             <Route path="/" component={Home}/>
-            <Route exact path="/user" component={Users}/>
-            <Route exact path="/films/:filmId" component={Films}/>
+
           </Switch>
         </div>
       </Router>
