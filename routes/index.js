@@ -7,7 +7,7 @@ const infoController = require('../controllers/infoController')
 
 router.get('/api/users', userController.index)
 router.post('/api/users/', userController.create)
-router.get('/api/users/:userId', userController.show)
+router.get('/api/users/:usersId', userController.show)
 router.patch('/api/users/:userId', userController.update)
 router.delete('/api/users/:userId', userController.delete)
 
@@ -18,7 +18,7 @@ router.patch('/api/films/:filmId', filmsController.update)
 router.post('/api/users/:userId/films', filmsController.create)
 
 router.get('/api/films/:filmId/infos', infoController.index)
-router.get('/api/infos/:infoId', infoController.show)
+router.get('/api/info/:infoId', infoController.show)
 router.delete('/api/infos/:infoId', infoController.delete)
 router.patch('/api/infos/:infoId', infoController.update)
 router.post('/api/films/:filmId/infos', infoController.create)

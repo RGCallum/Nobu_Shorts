@@ -10,9 +10,9 @@ class User extends Component {
         newUser: {
           username: '',
           password: '',
-        //   email: '',
-        //   bio: '',
-        //   image: '',
+          email: '',
+          bio: '',
+          image: '',
         //   films: [],
         }
       }
@@ -50,7 +50,7 @@ class User extends Component {
             <h3>All Users: </h3>
             { this.state.users.map((user) => (
               <div key={user._id}>
-                <Link to={`/api/users/${user._id}`}>{user.username}</Link>
+                <Link to={`/users/${user._id}`}>{user.username}</Link>
               </div>
             )) }
     
@@ -64,7 +64,7 @@ class User extends Component {
                 <label htmlFor="password">Password: </label>
                 <input onChange={this.handleChange} value={this.state.newUser.password} type="password" name="password"/>
               </div>
-              {/* <div>
+              <div>
                 <label htmlFor="email">Email: </label>
                 <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email"/>
               </div>
@@ -79,7 +79,7 @@ class User extends Component {
               <div>
                 <label htmlFor="films">Films: </label>
                 <input onChange={this.handleChange} value={this.state.newUser.films} type="text" name="films"/>
-              </div> */}
+              </div>
               <button type="submit">Create User</button>
             </form>
           </div>
