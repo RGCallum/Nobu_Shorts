@@ -130,7 +130,7 @@ const film3 = new Film({
     info: [info3]
 })
 const film4 = new Film({
-    name: "CAKES DA KILLA: NO HOMO",
+    name: "Cakes Da Killa: NO HOMO",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://www.youtube.com/watch?v=ZfqKmVFIvFI",
     info: [info4]

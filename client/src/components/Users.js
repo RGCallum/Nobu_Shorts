@@ -9,16 +9,17 @@ class User extends Component {
         users: [],
         newUser: {
           username: '',
-          password: ''
+          password: '',
+        //   email: '',
+        //   bio: '',
+        //   image: '',
+        //   films: [],
         }
       }
     
       handleChange = (event) => {
-        console.log('name', event.target.name)
-        console.log('value', event.target.value)
         const updatedNewUser = {...this.state.newUser}
     
-        // Event Target Name will be either 'username' or 'password'
         updatedNewUser[event.target.name] = event.target.value
         this.setState({newUser: updatedNewUser})
       }
@@ -26,9 +27,7 @@ class User extends Component {
       handleSubmit = (event) => {
         event.preventDefault()
     
-        // Make post to our api to create new user
         axios.post('/api/users', this.state.newUser).then(res => {
-          // when we get that data back, we need to navigate to the new users page
           console.log(res.data)
           this.props.history.push(`/users/${res.data._id}`)
         })
@@ -47,12 +46,11 @@ class User extends Component {
     
       render() {
         return (
-          <div>
-            <h1>Log-In To See Your Ideas</h1>
+          <div> 
             <h3>All Users: </h3>
             { this.state.users.map((user) => (
               <div key={user._id}>
-                <Link to={`/users/${user._id}`}>{user.username}</Link>
+                <Link to={`/api/users/${user._id}`}>{user.username}</Link>
               </div>
             )) }
     
@@ -66,6 +64,22 @@ class User extends Component {
                 <label htmlFor="password">Password: </label>
                 <input onChange={this.handleChange} value={this.state.newUser.password} type="password" name="password"/>
               </div>
+              {/* <div>
+                <label htmlFor="email">Email: </label>
+                <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email"/>
+              </div>
+              <div>
+                <label htmlFor="bio">Bio: </label>
+                <input onChange={this.handleChange} value={this.state.newUser.bio} type="text" name="bio"/>
+              </div>
+              <div>
+                <label htmlFor="image">Image: </label>
+                <input onChange={this.handleChange} value={this.state.newUser.image} type="text" name="image"/>
+              </div>
+              <div>
+                <label htmlFor="films">Films: </label>
+                <input onChange={this.handleChange} value={this.state.newUser.films} type="text" name="films"/>
+              </div> */}
               <button type="submit">Create User</button>
             </form>
           </div>
