@@ -96,10 +96,10 @@ class Film extends Component {
   handleCreateNewFilm = () => {
     const userId = this.props.match.params.userId
     const payload = {
-      name: 'Film Title',
-      image: 'Film Description',
-      link: 'Film Description',
-      info: 'Film Description'
+      name: 'Film Name',
+      image: 'image',
+      link: 'link',
+    //   info: 'Film Description'
 
     }
     axios.post(`/api/users/${userId}/films`, payload).then(res => {
@@ -155,11 +155,11 @@ class Film extends Component {
   render() {
     return (
       <div>
-        {/* <NameNButtonStyle> */}
+        <NameNButtonStyle>
 
-          <h1>{this.state.user.username}'s Films </h1>
+          {/* <h1>{this.state.user.username}'s Films </h1> */}
           <br />
-        {/* </NameNButtonStyle> */}
+        </NameNButtonStyle>
         <NewFilmButton onClick={this.handleCreateNewFilm}>
           New Film
         </NewFilmButton>
@@ -176,14 +176,14 @@ class Film extends Component {
                 <input
                   onBlur={() => this.handleUpdate(film._id)}
                   onChange={(event) => this.handleChange(event, film._id)}
-                  type="text" name="title"
-                  value={film.title}
+                  type="text" name="name"
+                  value={film.name}
                 />
                 <textarea
                   onBlur={() => this.handleUpdate(film._id)}
                   onChange={(event) => this.handleChange(event, film._id)}
-                  name="description"
-                  value={film.description}
+                  name="info"
+                  value={film.info}
                 />
                 <button onClick={deleteFilm}>X</button>
 
