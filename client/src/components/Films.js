@@ -4,15 +4,14 @@ import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 
 
-// Need info about a film
-// Need info about that films films
+
 
 const FilmStyles = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
   width: 200px;
-  height: 100px;
+  height: 50px;
   background: rgb(43, 172, 174, 0.6);
   margin: 10px 0;
   
@@ -23,6 +22,12 @@ const FilmStyles = styled.div`
     right: 10px;
     color: red;
   }
+  .button2{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    color: blue; 
+  }
   input,
   textarea {
     background-color: transparent;
@@ -30,15 +35,10 @@ const FilmStyles = styled.div`
      
   }
   input {
-    height: 30%;
-    font-size: 1.3rem;
-    // background-color: rgba(232, 232, 232, 0.653);
+
 
   }
-  textarea {
-    height: 70%;
 
-  }
 `
 
 const NewFilmButton = styled.button`
@@ -168,6 +168,7 @@ class Film extends Component {
         <FilmsContainerStyle>
           {this.state.films.map(film => {
             const deleteFilm = () => {
+                
               return this.handleDelete(film._id)
             }
 
@@ -179,14 +180,12 @@ class Film extends Component {
                   type="text" name="name"
                   value={film.name}
                 />
-                <textarea
-                  onBlur={() => this.handleUpdate(film._id)}
-                  onChange={(event) => this.handleChange(event, film._id)}
-                  name="info"
-                  value={film.info}
-                />
-                <button onClick={deleteFilm}>X</button>
 
+                <button onClick={deleteFilm}>X</button>
+                {/* <Link to={`/info/${film._id}`}>{film.name}</Link> */}
+                <Link to="/users/:filmId/"> 🎬 Film Info</Link>
+
+                {/* <button className = 'button2'>Film Info</button> */}
               </FilmStyles>
 
 

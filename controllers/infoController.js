@@ -4,7 +4,7 @@ const Info = require('../models/Info')
 const infosController = {
     index: (req, res) => {
         var filmId = req.params.filmId
-        Film.findById(filmId).populate('infos')
+        Film.findById(filmId).populate('info')
             .then((film) => {
                 res.send(film.infos)
             })
