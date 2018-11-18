@@ -67,7 +67,7 @@ const NameNButtonStyle = styled.div`
   
 `
 
-class Film extends Component {
+class UserShow extends Component {
     state = {
         films: [],
         newFilm: {
@@ -213,4 +213,4 @@ class Film extends Component {
         )
     }
 }
-export default Film
+export default UserShow

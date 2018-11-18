@@ -10,9 +10,9 @@ display: flex;
 padding: 10px;
 justify-content: space-around;
 background: black;
-font-weight: 800;
+font-weight: 400;
 color: turquoise;
-font-size: 25px;
+font-size: 20px;
 margin: 0;
 
 a{
@@ -35,7 +35,9 @@ class NavBar extends Component {
             <div>
           <Link to="/"> 🏠 Home</Link>
           <Link to="/users"> 👤 Users</Link>
-          <Link to="/films"> 🎬 Films</Link>
+          <Link to="/users/:userID"> 🗂 Profile</Link>
+
+          <Link to="/films/:filmId"> 🎬 Films</Link>
 
 
 

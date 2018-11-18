@@ -47,12 +47,13 @@ class User extends Component {
       render() {
         return (
           <div> 
-            <h3>All Users: </h3>
+            <h3>Featured Filmmakers: </h3>
             { this.state.users.map((user) => (
               <div key={user._id}>
                 <Link to={`/users/${user._id}`}>{user.username}</Link>
               </div>
             )) }
+            
     
             <h3>Sign-Up</h3>
             <form onSubmit={this.handleSubmit}>
