@@ -182,8 +182,8 @@ class Film extends Component {
                 />
 
                 <button onClick={deleteFilm}>X</button>
-                {/* <Link to={`/info/${film._id}`}>{film.name}</Link> */}
-                <Link to="/users/"> 🎬 Film Info</Link>
+                {/* <Link to={`/films/${film._id}`}>{film.name}</Link> */}
+                <Link to={`/films/${film._id}`}> 🎬 Film Info</Link>
 
                 {/* <button className = 'button2'>Film Info</button> */}
               </FilmStyles>
