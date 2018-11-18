@@ -38,6 +38,7 @@ class NavBar extends Component {
           <Link to="/users/:userID"> 🗂 Profile</Link>
 
           <Link to="/films/:filmId"> 🎬 Films</Link>
+          <Link to='/infos/:infoId'>  InfoShow</Link>
 
 
 

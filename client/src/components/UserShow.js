@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import infoShow from './infoShow';
 
 
 
@@ -11,7 +12,7 @@ const FilmStyles = styled.div`
   position: relative;
   flex-direction: column;
   width: 200px;
-  height: 50px;
+  height: 100px;
   background: rgb(43, 172, 174, 0.6);
   margin: 10px 0;
   
@@ -30,15 +31,21 @@ const FilmStyles = styled.div`
   }
   input,
   textarea {
+      height: 90px;
     background-color: transparent;
     border: none;
      
   }
   input {
-
+    height: 30%;
+    
+    font-size: 1.3rem;
 
   }
+  textarea {
+    height: 70%;
 
+  }
 `
 
 const NewFilmButton = styled.button`
@@ -164,7 +171,7 @@ class UserShow extends Component {
                     <br />
                 </NameNButtonStyle>
                 <NewFilmButton onClick={this.handleCreateNewFilm}>
-                    New Film
+                    New Entry
         </NewFilmButton>
 
 
@@ -183,11 +190,16 @@ class UserShow extends Component {
                                     type="text" name="name"
                                     value={film.name}
                                 />
+                                {/* <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="info"
+                                    value={film.info}
+                                /> */}
 
                                 <button onClick={deleteFilm}>X</button>
-                                {/* <Link to={`/films/${film._id}`}>{film.name}</Link> */}
-                                <Link to={`/films/${film._id}`}> 🎬 Film Info</Link>
-
+                                <Link to={`/infos/${film._id}`}> 🎬 Film Info</Link>
+                                {/* <a href="/infos/:infoId">🎬 Film Info</a> */}
                                 {/* <button className = 'button2'>Film Info</button> */}
                             </FilmStyles>
 

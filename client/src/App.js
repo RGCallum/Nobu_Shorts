@@ -6,6 +6,8 @@ import Films from './components/Films'
 import Users from './components/Users'
 import Info from './components/Info'
 import UserShow from './components/UserShow';
+import infoShow from './components/infoShow';
+
 
 
 
@@ -22,6 +24,9 @@ class App extends Component {
             <Route exact path="/films/:filmId" component={Films}/>
             <Route exact path="/users/:userId" component={UserShow}/>
             <Route exact path="/infos/:infoId" component={Info}/>
+            <Route exact path='/api/films/:filmId/infoId' component={infoShow}/>
+
+            
             <Route path="/" component={Home}/>
 
           </Switch>

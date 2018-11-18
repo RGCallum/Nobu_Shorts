@@ -107,7 +107,7 @@ const info10 = new Info({
     year: 2012,
     location: "Brooklyn NY",
     image: "/images/filmstrip.png",
-    awards: "Bronze Telly Award, BC Best Screenwriter Award"
+    awards: "Bronze Telly Award, BC Best Screenwriter Award",
 })
 
 const film1 = new Film({

@@ -18,9 +18,9 @@ router.patch('/api/films/:filmId', filmsController.update)
 router.post('/api/users/:userId/films', filmsController.create)
 
 router.get('/api/films/:filmId', infoController.index)
-router.get('/api/infos/:infoId', infoController.show)
+router.get('/api/films/:filmId', infoController.show)
 router.delete('/api/infos/:infoId', infoController.delete)
 router.patch('/api/infos/:infoId', infoController.update)
-router.post('/api/films/:filmId/infos', infoController.create)
+router.post('/api/films/:filmId/infoId', infoController.create)
 
 module.exports = router

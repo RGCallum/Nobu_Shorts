@@ -5,6 +5,8 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "html-react-parser": "0.0.4",
     "postinstall": "^0.4.2",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",

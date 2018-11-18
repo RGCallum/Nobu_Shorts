@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+
 class Info extends Component {
       state = {
         infos: [],
@@ -16,6 +17,18 @@ class Info extends Component {
           awards: '',
     }
   }
+
+
+
+//   getAllInfos = () => {
+//     axios.get('/api/infos/:infoId').then((res) => {
+//       this.setState({infos: res.data})
+//     })
+//   }
+
+//   componentDidMount(){
+//     this.getAllInfos()
+//   }
     
   handleChange = (event) => {
     const updatedNewInfo = {...this.state.newInfo}
@@ -34,20 +47,12 @@ class Info extends Component {
     
   }
 
-  getAllInfos = () => {
-    axios.get('/api/infos/:infoId').then((res) => {
-      this.setState({infos: res.data})
-    })
-  }
 
-  componentDidMount(){
-    this.getAllInfos()
-  }
 
   render() {
     return (
       <div> 
-        {/* <h3> All About {this.state.film.name}'s </h3> */}
+        <h3> All About {this.state.infos.name} </h3>
         {/* { this.state.infos.map((info) => (
           <div key={info._id}>
             <Link to={`/infos/${info._id}`}>{info.infoname}</Link>
@@ -62,7 +67,7 @@ class Info extends Component {
             // value={this.state.newInfo.name}  placeholder= {Info} 
             type="text" name="name"/>
           </div>
-          {/* <div>
+          <div>
             <label htmlFor="synopsis">Synopsis: </label>
             <input onChange={this.handleChange} value={this.state.newInfo.synopsis} placeholder=  {this.state.newInfo.synopsis}  type="synopsis" name="synopsis"/>
           </div>
@@ -88,8 +93,8 @@ class Info extends Component {
           </div>
           <div>
             <label htmlFor="awards">Awards: </label>
-            <input onChange={this.handleChange} value={this.state.newInfo.awards} placeholder= {this.state.Info.awards} type="text" name="awards"/>
-          </div> */}
+            <input onChange={this.handleChange} value={this.state.newInfo.awards} placeholder= {this.state.newInfo.awards} type="text" name="awards"/>
+          </div>
           <button type="submit">Create Info</button>
         </form>
       </div>
