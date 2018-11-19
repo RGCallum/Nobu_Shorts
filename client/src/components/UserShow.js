@@ -87,6 +87,7 @@ const NameNButtonStyle = styled.div`
 
 class UserShow extends Component {
     state = {
+        user: '',
         films: [],
         newFilm: {
             name: '',
@@ -172,8 +173,8 @@ class UserShow extends Component {
   
                     
                     <NameNButtonStyle>
-                     {/* <h1>{this.props.user}'s Films </h1>
-                        {this.props.user.image} */}
+                      <h1>{this.state.user.username}'s Films </h1>
+                                        <img src={this.state.user.image}  alt="film pic" />
                         <br />
                     </NameNButtonStyle>
                     <NewFilmButton onClick={this.handleCreateNewFilm}>

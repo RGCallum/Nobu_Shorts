@@ -105,7 +105,6 @@ class Profile extends Component {
     handleDelete = userId => {
         axios.delete(`/api/users/${userId}`).then(() => {
             const newUsers = [...this.state.users]
-            
             const filtered = newUsers.filter(user => {
                 return user._id !== userId // ! = =
             })
@@ -155,8 +154,8 @@ class Profile extends Component {
                                         <input
                                             onBlur={() => this.handleUpdate()}
                                             onChange={(event) => this.handleChange(event)}
-                                            type="text" name="username" 
-                                            value={this.state.user.username}
+                                            type="text" name="username" placeholder={this.state.user.username}
+                                            // value={this.state.user.username}
                                         />
                                                                                 <textarea
                                             onBlur={() => this.handleUpdate()}
