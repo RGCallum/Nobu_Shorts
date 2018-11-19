@@ -23,7 +23,6 @@ class User extends Component {
           email: '',
           bio: '',
           image: '',
-        //   films: [],
         }
       }
     
