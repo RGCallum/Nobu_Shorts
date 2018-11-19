@@ -12,7 +12,7 @@ const FilmStyles = styled.div`
   position: relative;
   flex-direction: column;
   width: 200px;
-  height: 100px;
+  height: 400px;
   background: rgb(43, 172, 174, 0.6);
   margin: 10px 0;
   
@@ -81,7 +81,9 @@ class UserShow extends Component {
             name: '',
             image: '',
             link: '',
-            info: '',
+            info: [{
+
+            }],
 
         }
     }
@@ -189,16 +191,17 @@ class UserShow extends Component {
                                     onChange={(event) => this.handleChange(event, film._id)}
                                     type="text" name="name"
                                     value={film.name}
+
                                 />
-                                {/* <textarea
+
+                                <textarea
                                     onBlur={() => this.handleUpdate(film._id)}
                                     onChange={(event) => this.handleChange(event, film._id)}
-                                    name="info"
-                                    value={film.info}
-                                /> */}
+                                    name="info" value={film.info}
+                                />
 
                                 <button onClick={deleteFilm}>X</button>
-                                <Link to={`/infos/${film._id}`}> 🎬 Film Info</Link>
+                                <Link to={`/infos/${film._id}`}></Link>
                                 {/* <a href="/infos/:infoId">🎬 Film Info</a> */}
                                 {/* <button className = 'button2'>Film Info</button> */}
                             </FilmStyles>
@@ -214,11 +217,17 @@ class UserShow extends Component {
                         </div>
                     ))}
                 </div> */}
-                userShow
+                userShow.js
                 <div>
+                    <br />
                     {this.state.films.map((film) => (
                         <div key={film._id}>
-                            <Link to={`/films/${film._id}`}>{film.name}</Link>
+                            <Link to={`/films/${film._id}`}>{film.name} </Link>
+                            {film.image}
+                            <br /> {film.info}  <br />
+                            {film.info.role}
+                            <a href={film.link}> Watch {film.name} here!</a> <br />
+                            <br />
                         </div>
                     ))}
                 </div>

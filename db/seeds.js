@@ -114,63 +114,63 @@ const film1 = new Film({
     name: "Oh Shh",
     image: "/public/images/clapper.jpeg",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: [info1]
+    info: [info1, info1]
 })
 const film2 = new Film({
     name: "Unthinkable",
     image: "/public/images/clapper.jpeg",
     link: "https://www.youtube.com/watch?v=vFmJwyEYUtc",
-    info: [info2]
+    info: [info2, info2]
 })
 
 const film3 = new Film({
     name: "Women's Work",
     image: "/public/images/clapper.jpeg",
     link: "https://www.jatovia.com/women-s-work#1",
-    info: [info3]
+    info: [info3, info3]
 })
 const film4 = new Film({
     name: "Cakes Da Killa: NO HOMO",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://www.youtube.com/watch?v=ZfqKmVFIvFI",
-    info: [info4]
+    info: [info4, info4]
 })
 const film5 = new Film({
     name: "Seance",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://vimeo.com/296219236?fbclid=IwAR25lrV6PsZtY1oqZIDeXkqdDuirakZrpD0Z_GtKNbrvV_ZgyvDu13nbqlA",
-    info: [info5]
+    info: [info5, info5]
 })
 const film6 = new Film({
     name: "Believer",
     image: "/public/images/clapper.jpeg",
     link: "https://vimeo.com/213300154",
-    info: [info6]
+    info: [info6, info6]
 })
 const film7 = new Film({
     name: "GTW",
     image: "/public/images/clapper.jpeg",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: [info7]
+    info: [info7, info7]
 })
 
 const film8 = new Film({
     name: "Back to the Future",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: [info8]
+    info: [info8, info8]
 })
 const film9 = new Film({
     name: "Back to the Future",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: [info9]
+    info: [info9, info9]
 })
 const film10 = new Film({
     name: "Back to the Future",
     image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
     link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    info: [info10]
+    info: [info10, info10]
 })
 
 const user1 = new User({
