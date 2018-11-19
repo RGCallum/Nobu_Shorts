@@ -51,6 +51,7 @@ class User extends Component {
             { this.state.users.map((user) => (
               <div key={user._id}>
                 <Link to={`/users/${user._id}`}>{user.username}</Link>
+                {user.image}
               </div>
             )) }
             
