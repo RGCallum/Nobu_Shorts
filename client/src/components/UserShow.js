@@ -144,8 +144,6 @@ class UserShow extends Component {
 
 
     handleChange = (event, filmId) => {
-        // const name = event.target.name
-        // const value = event.target.value
         const { value, name } = event.target
         const newFilms = [...this.state.films]
         const updatedValue = newFilms.map(film => {
@@ -159,15 +157,12 @@ class UserShow extends Component {
     }
 
     handleUpdate = (filmId) => {
-        // Find the individual updated film from this.state.films
         const filmToUpdate = this.state.films.find(film => {
             return film._id === filmId
         })
-        // axios post the endpoint with updated data
         axios.patch(`/api/films/${filmId}`, filmToUpdate).then(() => {
             console.log("Updated Film")
         })
-        // console .log saved
     }
 
     render() {
