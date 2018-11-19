@@ -8,7 +8,7 @@ import Users from './Users';
 
 
 const UserStyles = styled.div`
-  display: flex;
+   display: flex;
   position: relative;
   flex-direction: column;
   width: 600px;
@@ -79,7 +79,7 @@ const NameNButtonStyle = styled.div`
 class Profile extends Component {
     state = {
         users:[],
-        user: '',
+        user: {},
         username: '',
         password: '',
         email: '',
@@ -102,16 +102,30 @@ class Profile extends Component {
     }
 
 
-    handleDelete = userId => {
-        axios.delete(`/api/users/${userId}`).then(() => {
-            const newUsers = [...this.state.users]
-            const filtered = newUsers.filter(user => {
-                return user._id !== userId // ! = =
-            })
-            this.setState({ users: filtered })
-        })
-    }
+    // handleDelete = (userId) => {
+    //     // console.log(req.params.id)
+    //     axios.delete(`/api/users/${userId}`).then(() => {
+    //         const newUsers = [...this.state.users]
+    //         const filtered = newUsers.filter(user => {
+    //             return user._id !== userId 
+    //         })
+    //         this.setState({ users: filtered })
+    //     })
+    // }
 
+    handleDelete = userId => {
+
+        if (this.props.match.params.userId) {   
+          const userId = this.props.match.params.userId;  
+          console.log(userId);
+          axios.delete(`/api/users/${userId}`)
+            .then(res => {this.setState({ user: res.data.user });
+        this.props.history.push(`/users/${userId}`
+              )
+              this.setState({ redirect: true })
+
+    }) }
+  }
 
     handleChange = (event, userId) => {
         const { value, name } = event.target
@@ -126,13 +140,15 @@ class Profile extends Component {
         this.setState({ users: updatedValue })
     }
 
-    handleUpdate = (userId) => {
-        const userToUpdate = this.state.users.find(user => {
-            return user._id === userId
-        })
-        axios.patch(`/api/users/${userId}`, userToUpdate).then(() => {
-            console.log("Updated User")
-        })
+    handleUpdate = () => {
+        const userId = this.props.match.params.id
+        const updatedUser = this.state.user
+        console.log(userId)
+        axios.patch(`/api/users/${userId}`, updatedUser)
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ user: this.state.user })
+            })
     }
 
     render() {
@@ -185,13 +201,11 @@ class Profile extends Component {
                                             value={this.state.user.bio} 
                                         />
                                       
-                                        {/* <button onClick={deleteUser}>Delete User</button> */}
+                                     <Link to={`/api/users`}> 
+                                      <button onClick={this.handleDelete}>Delete User</button>
+                                      </Link> 
 
                                     </UserStyles>
-
-
-                                {/* ) */}
-                            {/* })} */}
                         </UsersContainerStyle>
                     </div>
  

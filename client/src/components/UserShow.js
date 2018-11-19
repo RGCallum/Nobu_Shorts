@@ -82,7 +82,11 @@ const NameNButtonStyle = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: center;
-  
+  img{
+    max-width: 200px;
+    max-height: 200px;
+        
+   }
 `
 
 class UserShow extends Component {
