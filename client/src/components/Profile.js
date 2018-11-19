@@ -78,16 +78,14 @@ const NameNButtonStyle = styled.div`
 
 class Profile extends Component {
     state = {
+        users:[],
         user: '',
         username: '',
         password: '',
         email: '',
         bio: '',
-        image: ''
-       
-            
-        
-        
+        image: '',
+     
     }
 
 
@@ -107,6 +105,7 @@ class Profile extends Component {
     handleDelete = userId => {
         axios.delete(`/api/users/${userId}`).then(() => {
             const newUsers = [...this.state.users]
+            
             const filtered = newUsers.filter(user => {
                 return user._id !== userId // ! = =
             })
@@ -138,16 +137,14 @@ class Profile extends Component {
     }
 
     render() {
+
         return (
             <div>
-                
   
-                    
                     <NameNButtonStyle>
                      <h1>{this.state.user.username}'s Profile </h1>
                         <br />
                     </NameNButtonStyle>
-                   
 
                     <div>Type in field to edit
                 <UsersContainerStyle>
@@ -188,11 +185,8 @@ class Profile extends Component {
                                             name="bio" 
                                             value={this.state.user.bio} 
                                         />
-
-                                        
-                                        <button >Delete User</button>
-
-
+                                      
+                                        {/* <button onClick={deleteUser}>Delete User</button> */}
 
                                     </UserStyles>
 

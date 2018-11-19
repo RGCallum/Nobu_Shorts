@@ -132,42 +132,16 @@ class UserShow extends Component {
     }
 
     handleDelete = filmId => {
-        // some unique value
         axios.delete(`/api/films/${filmId}`).then(() => {
-            //Remove the film with filmID from this.state.films
             const newFilms = [...this.state.films]
-            // Return only films that are NOT the id provided
             const filtered = newFilms.filter(film => {
                 return film._id !== filmId // ! = =
             })
-            // Take filtered data and set it to films
             this.setState({ films: filtered })
         })
     }
 
-    handleDeleteUser = userId => {
-        // some unique value
-        axios.delete(`/api/users`).then(() => {
-            //Remove the user with userID from this.state.users
-            const newUsers = [...this.state.users]
-            // Return only users that are NOT the id provided
-            const filtered = newUsers.filter(user => {
-                return user._id !== userId // ! = =
-            })
-            // Take filtered data and set it to users
-            this.setState({ users: filtered })
-        })
 
-    }
-
-    // getUser = () => {
-    //     const userId = this.props.match.params.id
-    //     axios.get(`/api/users/${userId}`)
-    //         .then((res) => {
-    //             this.setState({ user: res.data })
-    //         })
-            
-    // }
 
     handleChange = (event, filmId) => {
         const { value, name } = event.target
@@ -272,8 +246,7 @@ class UserShow extends Component {
                                         />
                                         <button onClick={deleteFilm}>Delete Film</button>
                                         <Link to={`/infos/${film._id}`}></Link>
-                                        {/* <a href="/infos/:infoId">🎬 Film Info</a> */}
-                                        {/* <button className = 'button2'>Film Info</button> */}
+
 
 
                                     </FilmStyles>
