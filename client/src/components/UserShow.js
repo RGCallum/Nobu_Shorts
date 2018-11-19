@@ -199,11 +199,18 @@ class UserShow extends Component {
                                     onChange={(event) => this.handleChange(event, film._id)}
                                     name="info" value={film.info}
                                 />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="link" value={film.link}
+                                />
 
                                 <button onClick={deleteFilm}>X</button>
                                 <Link to={`/infos/${film._id}`}></Link>
                                 {/* <a href="/infos/:infoId">🎬 Film Info</a> */}
                                 {/* <button className = 'button2'>Film Info</button> */}
+
+                                
                             </FilmStyles>
 
 
@@ -220,7 +227,7 @@ class UserShow extends Component {
                 userShow.js
                 <div>
                     <br />
-                    {this.state.films.map((film) => (
+                    {/* {this.state.films.map((film) => (
                         <div key={film._id}>
                             <Link to={`/films/${film._id}`}>{film.name} </Link>
                             {film.image}
@@ -229,7 +236,7 @@ class UserShow extends Component {
                             <a href={film.link}> Watch {film.name} here!</a> <br />
                             <br />
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
         )
