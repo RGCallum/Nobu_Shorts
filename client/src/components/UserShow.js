@@ -206,7 +206,7 @@ class UserShow extends Component {
                        Add New Film
                     </NewFilmButton>
 
-                  <Link to={`/users/:userId/profile`} > <button>Edit Profile</button> </Link>
+                  <Link to={`/users/${this.props.match.params.userId}/profile`} > <button>Edit Profile</button> </Link>
 
                     <div>Type in fields below to edit Film Info
                 <FilmsContainerStyle>

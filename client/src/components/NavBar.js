@@ -35,12 +35,7 @@ class NavBar extends Component {
             <div>
           <Link to="/"> 🏠 Home</Link>
           <Link to="/users"> 🎬 Users</Link>
-          <Link to="/users/:userID"> 🗂 Profile</Link>
-
-          {/* <Link to="/films/:filmId"> 🎬 Films</Link>
-          <Link to='/infos/:infoId'>  InfoShow</Link> */}
-
-
+          <Link to="/users/:userId"> 🗂 Profile</Link>
 
           </div>
           

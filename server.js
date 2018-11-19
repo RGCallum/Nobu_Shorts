@@ -40,9 +40,9 @@ app.get('/', (req, res) => {
 
 app.use('/', routes)
 
-const port = 8000;
-io.listen(port);
-console.log('socket io is listening on port ', port);
+// const port = 8000;
+// io.listen(port);
+// console.log('socket io is listening on port ', port);
 
 const PORT = process.env.PORT || 3001;
 

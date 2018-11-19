@@ -78,42 +78,38 @@ const NameNButtonStyle = styled.div`
 
 class Profile extends Component {
     state = {
-        users: [],
+        user: '',
+        username: '',
+        password: '',
+        email: '',
+        bio: '',
+        image: ''
        
-            username: '',
-            password: '',
-            email: '',
-            bio: '',
-            image: '',
+            
         
         
     }
 
 
     componentDidMount() {
-        // make an api call to get one single user
-        // On the server URL is '/api/users/:userId'
+
         const userId = this.props.match.params.userId
-        axios.get(`/api/users/${userId}/profile`).then(res => {
+        axios.get(`/api/users/${userId}`).then(res => {
             console.log(res.data)
             this.setState({
                 user: res.data,
-                users: res.data.users
+
             })
         })
     }
 
 
     handleDelete = userId => {
-        // some unique value
-        axios.delete(`/api/users/${userId}/profile`).then(() => {
-            //Remove the user with userID from this.state.users
+        axios.delete(`/api/users/${userId}`).then(() => {
             const newUsers = [...this.state.users]
-            // Return only users that are NOT the id provided
             const filtered = newUsers.filter(user => {
                 return user._id !== userId // ! = =
             })
-            // Take filtered data and set it to users
             this.setState({ users: filtered })
         })
     }
@@ -136,7 +132,7 @@ class Profile extends Component {
         const userToUpdate = this.state.users.find(user => {
             return user._id === userId
         })
-        axios.patch(`/api/users/${userId}/profile`, userToUpdate).then(() => {
+        axios.patch(`/api/users/${userId}`, userToUpdate).then(() => {
             console.log("Updated User")
         })
     }
@@ -148,65 +144,61 @@ class Profile extends Component {
   
                     
                     <NameNButtonStyle>
-                     {/* <h1>{this.state.user.username}'s Users </h1> */}
+                     <h1>{this.state.user.username}'s Profile </h1>
                         <br />
                     </NameNButtonStyle>
                    
 
                     <div>Type in field to edit
                 <UsersContainerStyle>
-                    
-                            {this.state.users.map(user => {
-                                const deleteUser = () => {
 
-                                    return this.handleDelete(user._id)
-
-                                }
-
-                                return (
 
                                     <UserStyles>
 
                                         <input
-                                            onBlur={() => this.handleUpdate(user._id)}
-                                            onChange={(event) => this.handleChange(event, user._id)}
-                                            type="text" name="username" placeholder={'Name'}
-                                            value={user.username}
+                                            onBlur={() => this.handleUpdate()}
+                                            onChange={(event) => this.handleChange(event)}
+                                            type="text" name="username" 
+                                            value={this.state.user.username}
                                         />
+                                                                                <textarea
+                                            onBlur={() => this.handleUpdate()}
+                                            onChange={(event) => this.handleChange(event)}
+                                            name="image" 
+                                            value={this.state.user.image} 
+                                        />   
+                                        <img src={this.state.user.image} alt="user pic" />
 
                                         <textarea
-                                            onBlur={() => this.handleUpdate(user._id)}
-                                            onChange={(event) => this.handleChange(event, user._id)}
-                                            type='password' value={user.password} name="password" 
+                                            onBlur={() => this.handleUpdate()}
+                                            onChange={(event) => this.handleChange(event)}
+                                            type='password' 
+                                            value={this.state.user.password} name="password" 
                                         />                   
 
                                         <textarea
-                                            onBlur={() => this.handleUpdate(user._id)}
-                                            onChange={(event) => this.handleChange(event, user._id)}
-                                            name="email" value={user.email} 
+                                            onBlur={() => this.handleUpdate()}
+                                            onChange={(event) => this.handleChange(event)}
+                                            name="email" 
+                                            value={this.state.user.email} 
                                         />
                                         <textarea
-                                            onBlur={() => this.handleUpdate(user._id)}
-                                            onChange={(event) => this.handleChange(event, user._id)}
-                                            name="bio" value={user.bio} 
+                                            onBlur={() => this.handleUpdate()}
+                                            onChange={(event) => this.handleChange(event)}
+                                            name="bio" 
+                                            value={this.state.user.bio} 
                                         />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(user._id)}
-                                            onChange={(event) => this.handleChange(event, user._id)}
-                                            name="image" value={user.image} 
-                                        />   <img src={user.image} alt="user pic" />
+
                                         
-                                        <button onClick={deleteUser}>Delete User</button>
-                                        <Link to={`/infos/${user._id}/profile`}></Link>
-                                        {/* <a href="/infos/:infoId">🎬 User Info</a> */}
-                                        {/* <button className = 'button2'>User Info</button> */}
+                                        <button >Delete User</button>
+
 
 
                                     </UserStyles>
 
 
-                                )
-                            })}
+                                {/* ) */}
+                            {/* })} */}
                         </UsersContainerStyle>
                     </div>
  
