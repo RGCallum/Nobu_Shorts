@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 
+const ProImg = styled.div`
+display: inline-block;
+align-items: center;
+img{
+  max-width: 250px;
+  border-radius: 500px;    
+ }
+
+`
 
 class User extends Component {
     state = {
@@ -51,7 +61,9 @@ class User extends Component {
             { this.state.users.map((user) => (
               <div key={user._id}>
                 <Link to={`/users/${user._id}`}>{user.username}</Link>
-                {user.image}
+                <ProImg>
+                  <img src= {user.image} alt="profile pic"/>
+                  </ProImg>
               </div>
             )) }
             
