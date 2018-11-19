@@ -60,10 +60,15 @@ class User extends Component {
             <h3>Featured Filmmakers: </h3>
             { this.state.users.map((user) => (
               <div key={user._id}>
-                <Link to={`/users/${user._id}`}>{user.username}</Link>
-                <ProImg>
+                <Link to={`/users/${user._id}`}> <h1>{user.username} </h1> </Link>
+              <br/>
+               <ProImg>
                   <img src= {user.image} alt="profile pic"/>
                   </ProImg>
+                  <br/>
+                <h4>
+                  {user.bio}</h4> <br/>
+                  <br/>
               </div>
             )) }
             

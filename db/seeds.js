@@ -228,7 +228,7 @@ const user1 = new User({
     password: "1234",
     email: "sceneitpix@gmail.com",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/10391928_1283724771257_251459_n.jpg?_nc_cat=100&_nc_ht=scontent-atl3-1.xx&oh=38b777d1256d868403b4c36f997a458d&oe=5C656B56",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/208171_10150149295942499_3384854_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=3c3860f0098c2d75265051e7cb4a26dc&oe=5C770518",
     films: [film1, film2]
 })
 const user2 = new User({

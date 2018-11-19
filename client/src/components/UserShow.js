@@ -195,10 +195,12 @@ class UserShow extends Component {
                         <br />
                     </NameNButtonStyle>
                     <NewFilmButton onClick={this.handleCreateNewFilm}>
-                        New Entry
+                       Add New Film
                     </NewFilmButton>
 
-                    <div>Type in in field to edit
+                  <Link to={`/users/:userId/profile`} > <button>Edit Profile</button> </Link>
+
+                    <div>Type in fields below to edit Film Info
                 <FilmsContainerStyle>
                     
                             {this.state.films.map(film => {

@@ -7,6 +7,7 @@ import Users from './components/Users'
 import Info from './components/Info'
 import UserShow from './components/UserShow';
 import infoShow from './components/infoShow';
+import Profile from './components/Profile';
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
             <Route exact path="/users/:userId" component={UserShow}/>
             <Route exact path="/infos/:infoId" component={Info}/>
             <Route exact path='/api/films/:filmId/infoId' component={infoShow}/>
+            <Route exact path="/users/:userId/profile/" component={Profile}/>
 
             
             <Route path="/" component={Home}/>
