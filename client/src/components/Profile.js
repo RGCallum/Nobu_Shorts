@@ -120,9 +120,7 @@ class Profile extends Component {
           console.log(userId);
           axios.delete(`/api/users/${userId}`)
             .then(res => {this.setState({ user: res.data.user });
-        this.props.history.push(`/users/${userId}`
-              )
-              this.setState({ redirect: true })
+        this.props.history.push(`/users/`)
 
     }) }
   }
@@ -201,7 +199,7 @@ class Profile extends Component {
                                             value={this.state.user.bio} 
                                         />
                                       
-                                     <Link to={`/api/users`}> 
+                                     <Link to={`/users`}> 
                                       <button onClick={this.handleDelete}>Delete User</button>
                                       </Link> 
 
