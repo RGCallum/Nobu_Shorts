@@ -236,7 +236,7 @@ const user2 = new User({
     password: "1234",
     email: "jatoviagary.films@gmail.com",
     bio: "Ja’Tovia M. Gary (b. Dallas, TX. 1984) is an artist and filmmaker currently living and working in Brooklyn, New York. Gary’s work seeks to liberate the distorted histories through which Black life is often viewed while fleshing out a nuanced and multivalent Black interiority. Through documentary film and experimental video art, Gary charts the ways structures of power shape our perceptions around representation, race, gender, sexuality, and violence. ",
-    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/182235_4628432183660_60965560_n.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=66140c1f429c068c1fe0baac38ccfc6a&oe=5C73B0E1",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/430010_4069878260161_907945121_n.jpg?_nc_cat=108&_nc_ht=scontent-atl3-1.xx&oh=aeb71085e0be9d5915915fa937d95462&oe=5C686213",
     films: [film3, film4]
 })
 const user3 = new User({

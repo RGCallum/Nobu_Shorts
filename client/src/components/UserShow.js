@@ -160,7 +160,14 @@ class UserShow extends Component {
 
     }
 
-
+    // getUser = () => {
+    //     const userId = this.props.match.params.id
+    //     axios.get(`/api/users/${userId}`)
+    //         .then((res) => {
+    //             this.setState({ user: res.data })
+    //         })
+            
+    // }
 
     handleChange = (event, filmId) => {
         const { value, name } = event.target
@@ -191,7 +198,8 @@ class UserShow extends Component {
   
                     
                     <NameNButtonStyle>
-                     {/* <h1>{this.state.user.username}'s Films </h1> */}
+                     {/* <h1>{this.props.user}'s Films </h1>
+                        {this.props.user.image} */}
                         <br />
                     </NameNButtonStyle>
                     <NewFilmButton onClick={this.handleCreateNewFilm}>
