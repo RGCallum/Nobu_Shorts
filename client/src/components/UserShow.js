@@ -19,8 +19,6 @@ h1{
   text-shadow: 1px 1px 1px white;
 }
 
-
-
 animation: color-change-5x 30s linear infinite alternate both;
 
 @keyframes color-change-5x {
@@ -40,7 +38,7 @@ animation: color-change-5x 30s linear infinite alternate both;
     background: #3bd80d;
   }
 }
-
+text-align: center;
 `
 
 const FilmStyles = styled.div`
@@ -53,45 +51,44 @@ const FilmStyles = styled.div`
   border-radius: 2px;
   border: inset 5;
   margin: 10px 0;
+  background-image: url('/images/filmstrip.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat:no-repeat;
+  img{
+    margin-left: 30%;
+    max-width: 150px;
+    max-height: 150px;
+}
   
  
 
   button {
     position: absolute;
-    bottom: 5px;
-    right: 200px;
+    bottom: 25px;
+    right: 260px;
     color: white;
     background-color: red;
     border-radius: 5px;
   }
-  .button2{
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    color: blue; 
-  }
-  input,
-  
-  textarea {
-      height: 90px;
+
+  input, textarea {
+    height: 40px;
     background-color: transparent;
     border: none;
-     
-  }
-  input {
-    height: 30%;
-    
-    font-size: 1.3rem;
+    display: flex;
+    // justify-content: center;
+    text-align: center;
+    margin-left: 100px;    
+    color: black;
+    max-width: 420px;
+}
 
-  }
-  textarea {
-    height: 70%;
-
-  }
   img{
    max-width: 250px;
-   )
-  
+   display: block;
+   justify-content: center;
+   border-radius: 5px;
   }
 `
 
@@ -111,11 +108,8 @@ flex-wrap: wrap ;
 justify-content: space-around ;
 align-items: center ;
 align-content: center ;
-  background-color: rgba(232, 232, 232, 0.653);
   
 `
-
-
 
 const NameNButtonStyle = styled.div`
 display: flex ;
@@ -247,7 +241,7 @@ class UserShow extends Component {
             <div>
 
                 <BkgdColors>
-<br/>
+                    <br />
                     <NameNButtonStyle>
                         <h1>{this.state.user.username}'s Films </h1><br />
                         <img src={this.state.user.image} alt="film pic" /><br />
@@ -255,15 +249,17 @@ class UserShow extends Component {
 
                     <FilmEditButton>
                         <EditProButton>
-                            <Link to={`/users/${this.props.match.params.userId}/profile`} style={{ textDecoration: 'none' }}> Edit Profile </Link>
+                            <Link to={`/users/${this.props.match.params.userId}/profile`} style={{ textDecoration: 'none' }}> Edit My Profile </Link>
                         </EditProButton>
-<br/>
+                        <br />
+                        <h4>Type in the fields below to automatically edit your film's information or...</h4>
+                         <br/> 
                         <NewFilmButton onClick={this.handleCreateNewFilm}>
-                            Add New Film
+                            Click to add a New Film
                         </NewFilmButton>
                     </FilmEditButton>
-                    <div> <h3>Type in fields below to edit Film Info</h3>
-        <FilmsContainerStyle>
+                    <div> <br />
+                        <FilmsContainerStyle>
 
                             {this.state.films.map(film => {
                                 const deleteFilm = () => {
@@ -276,34 +272,35 @@ class UserShow extends Component {
 
                                     <FilmStyles>
 
+
+
+                                        <textarea
+                                            onBlur={() => this.handleUpdate(film._id)}
+                                            onChange={(event) => this.handleChange(event, film._id)}
+                                            name="image" placeholder='Edit Photo'
+                                        />                   <img src={film.image} alt="film pic" />
+
                                         <input
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            type="text" name="name" placeholder='Name'
+                                            type="text" name="name" placeholder='Edit film name'
                                             value={film.name}
                                         />
-
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="image" placeholder='Photo'
-                                        />                   <img src={film.image} alt="film pic" />
-
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="link" placeholder='Link to film'
+                                            name="link" placeholder='Edit Link to film'
                                         />
-                                        <Link to=''>{film.link}</Link>
+                                        <Link to={film.link}>Watch {film.name} here</Link>
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="synopsis" value={film.synopsis} placeholder='Synopsis'
+                                            name="synopsis" value={film.synopsis} placeholder='Edit Synopsis'
                                         />
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="role" value={film.role} placeholder='Your Role'
+                                            name="role" value={film.role} placeholder='Edit Your Role'
                                         />
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
