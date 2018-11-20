@@ -5,15 +5,18 @@ import styled from 'styled-components'
 
 
 const BkgdColors = styled.div`
-display:flex-column;
-*{
+display: flex ;
+flex-direction: column ;
+flex-wrap: wrap ;
+justify-content: center ;
+align-items: center ;
+align-content: center ;*{
     margin: 0;
 }
 img{
   border: inset 2px;
 }
-// display: flex;
-// justify-content: center;
+
 
 animation: color-change-5x 30s linear infinite alternate both;
 
@@ -41,16 +44,25 @@ border: inset #C0C0C0;
 background-color: #ffffff70;
 width: 40vw;
 border-radius: 15px;
-// display: flex;
-// justify-content: center;
+display: flex ;
+flex-direction: column ;
+flex-wrap: wrap ;
+justify-content: center ;
+align-items: center ;
+align-content: center ;
+padding: 20px;
 
 `
 
 const ProImg = styled.div`
-display: inline-block;
-align-items: center;
+display: flex ;
+flex-direction: row ;
+flex-wrap: wrap ;
+justify-content: center ;
+align-items: center ;
+align-content: center ;
 img{
-  max-width: 250px;
+  max-width: 150px;
   border-radius: 500px;    
  }
 
@@ -101,15 +113,16 @@ class User extends Component {
         <BkgdColors>
 
           <h1>Featured Filmmakers: </h1>
-
+<br/>
           {this.state.users.map((user) => (
             <div key={user._id}>
 
               <UserContainer>
                 <Link to={`/users/${user._id}`}> 
-                <h2>{user.username} </h2>  <br/>
+                <h2>{user.username}</h2>  <br/>
                 <ProImg><img src={user.image} alt="profile pic"/></ProImg>
                   <br />
+                  <br/>
                 </Link>
                 <h5> {user.bio}</h5> 
                 <br />

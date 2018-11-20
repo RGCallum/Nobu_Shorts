@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const NavBarStyles = styled.div`
@@ -30,18 +30,18 @@ a:hover{
 
 class NavBar extends Component {
     render() {
-      return (
-        <NavBarStyles>
-            <div>
-          <Link to="/"> 🏠 Home</Link>
-          <Link to="/users"> 🎬 Users</Link>
-          <Link to="/users/:userId"> 🗂 Profile</Link>
+        return (
+            <NavBarStyles>
+                <div>
+                    <Link to="/"> 🏠 Home</Link>
+                    <Link to="/users"> 🎬 Users</Link>
+                    <Link to="/users/:userId"> 🗂 Profile</Link>
 
-          </div>
-          
-         </NavBarStyles>
-      );
+                </div>
+
+            </NavBarStyles>
+        );
     }
-  }
-  
-  export default NavBar;
+}
+
+export default NavBar;

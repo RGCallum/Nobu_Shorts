@@ -16,7 +16,6 @@ const FilmStyles = styled.div`
   background: rgb(43, 172, 174, 0.6);
   border-radius: 2px;
   border: inset 5;
-
   margin: 10px 0;
   
  
@@ -55,7 +54,9 @@ const FilmStyles = styled.div`
   }
   img{
    max-width: 250px;
-       
+
+   )
+  
   }
 `
 
@@ -178,7 +179,7 @@ class UserShow extends Component {
                     
                     <NameNButtonStyle>
                       <h1>{this.state.user.username}'s Films </h1>
-                                        <img src={this.state.user.image}  alt="film pic" />
+                        <img src={this.state.user.image}  alt="film pic" />
                         <br />
                     </NameNButtonStyle>
                     <NewFilmButton onClick={this.handleCreateNewFilm}>
@@ -187,84 +188,82 @@ class UserShow extends Component {
 
                   <Link to={`/users/${this.props.match.params.userId}/profile`} > <button>Edit Profile</button> </Link>
 
-                    <div>Type in fields below to edit Film Info
-                <FilmsContainerStyle>
-                    
-                            {this.state.films.map(film => {
-                                const deleteFilm = () => {
+            <div>Type in fields below to edit Film Info
+        <FilmsContainerStyle>
+            
+                    {this.state.films.map(film => {
+                        const deleteFilm = () => {
 
-                                    return this.handleDelete(film._id)
+                            return this.handleDelete(film._id)
 
-                                }
+                        }
 
-                                return (
+                        return (
 
-                                    <FilmStyles>
+                            <FilmStyles>
 
-                                       <input
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            type="text" name="name" placeholder='Name'
-                                            value={film.name}
-                                        />
+                                <input
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    type="text" name="name" placeholder='Name'
+                                    value={film.name}
+                                />
 
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="image" 
-                                        />                   <img src={film.image} alt="film pic" />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="image" 
+                                />                   <img src={film.image} alt="film pic" />
 
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="link"  placeholder='Link to film'
-                                        />
-                                        <Link to=''>{film.link}</Link>
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="synopsis" value={film.synopsis} placeholder='Synopsis'
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="role" value={film.role} placeholder='Your Role'
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="type" value={film.type} placeholder='Type of Work...film/music video/'
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="year" value={film.year} placeholder='Year released'
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="location" value={film.location} placeholder='Location'
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate(film._id)}
-                                            onChange={(event) => this.handleChange(event, film._id)}
-                                            name="awards" value={film.awards} placeholder='Awards'
-                                        />
-                                        <button onClick={deleteFilm}>Delete Film</button>
-
-
-                                    </FilmStyles>
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="link"  placeholder='Link to film'
+                                />
+                                <Link to=''>{film.link}</Link>
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="synopsis" value={film.synopsis} placeholder='Synopsis'
+                                />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="role" value={film.role} placeholder='Your Role'
+                                />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="type" value={film.type} placeholder='Type of Work...film/music video/'
+                                />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="year" value={film.year} placeholder='Year released'
+                                />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="location" value={film.location} placeholder='Location'
+                                />
+                                <textarea
+                                    onBlur={() => this.handleUpdate(film._id)}
+                                    onChange={(event) => this.handleChange(event, film._id)}
+                                    name="awards" value={film.awards} placeholder='Awards'
+                                />
+                                <button onClick={deleteFilm}>Delete Film</button>
 
 
-                                )
-                            })}
-                        </FilmsContainerStyle>
-                    </div>
- 
-                    userShow.js
-                
+                            </FilmStyles>
+
+
+                        )
+                    })}
+                </FilmsContainerStyle>
+                    </div>                
                 </div>
                 )
             }
         }
+        
 export default UserShow

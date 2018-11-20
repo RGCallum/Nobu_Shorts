@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import UserShow from './UserShow';
+import Users from './Users';
 
 
 const ImgStyles = styled.div`
@@ -36,6 +36,15 @@ const CountStyles = styled.div`
     margin-top: -10%;
     
 `
+const HoverButton = styled.div`
+button {
+    bottom: 5px;
+    right: 200px;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+  }
+`
 
 
 class Home extends Component {
@@ -49,9 +58,11 @@ class Home extends Component {
                         A space for Independent Filmmakers to display their work! <br/>
                         Although the film may have "No Budget" <br/>
                         it doesn't have to look that way!
-                       <br/> <a href="/users">
+                       <br/> <Link to="/users">
+                       <HoverButton>
                         <button>Click to Enter </button>
-                        </a>
+                        </HoverButton>
+                        </Link>
   {/* <img id = 'countdown' src="/images/clapping.gif" alt="countdown"/> */}
                      </CountStyles> 
                     <img src="/images/blankScreenTheatre3.png" alt="curtain" />
