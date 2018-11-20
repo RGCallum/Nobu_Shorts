@@ -201,7 +201,7 @@ class UserShow extends Component {
 
                                     <FilmStyles>
 
-                                        <input
+                                       <input
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             type="text" name="name" placeholder='Name'
@@ -211,14 +211,15 @@ class UserShow extends Component {
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="image" placeholder='Photo'
+                                            name="image" 
                                         />                   <img src={film.image} alt="film pic" />
 
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="link" value={film.link} placeholder='Link to film'
+                                            name="link"  placeholder='Link to film'
                                         />
+                                        <Link to=''>{film.link}</Link>
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
@@ -250,7 +251,6 @@ class UserShow extends Component {
                                             name="awards" value={film.awards} placeholder='Awards'
                                         />
                                         <button onClick={deleteFilm}>Delete Film</button>
-
 
 
                                     </FilmStyles>

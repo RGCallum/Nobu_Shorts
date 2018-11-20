@@ -122,7 +122,7 @@ const film1 = new Film({
 })
 const film2 = new Film({
     name: "Unmasked",
-    image: "https://i9.ytimg.com/vi/58e3Eo3Vh-E/mqdefault.jpg?sqp=CNCGyd8F&rs=AOn4CLC34ixm6L8wiJndc1l5ym8_F0Gdug&time=1542603748374",
+    image: "https://www.gannett-cdn.com/media/USATODAY/USATODAY/2013/04/08/unmasked-cover-3_4.jpg?width=534&height=712&fit=crop",
     link: "https://youtu.be/58e3Eo3Vh-E",
     synopsis: "Reporter trying to unmask all the new superheroes",
     role: "Director",
@@ -156,7 +156,7 @@ const film4 = new Film({
 })
 const film5 = new Film({
     name: "Seance",
-    image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+    image: "https://discoverpods.com/wp-content/uploads/2017/08/camera-2594759_1920-660x440.jpg",
     link: "https://vimeo.com/296219236?fbclid=IwAR25lrV6PsZtY1oqZIDeXkqdDuirakZrpD0Z_GtKNbrvV_ZgyvDu13nbqlA",
     synopsis: "Lorem ipsum dolor sit amet, consectetur",
     role: "Director",
@@ -167,7 +167,7 @@ const film5 = new Film({
 })
 const film6 = new Film({
     name: "Believer",
-    image: "/public/images/clapper.jpeg",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/21702_558310704185236_631823611_n.jpg?_nc_cat=102&_nc_ht=scontent-atl3-1.xx&oh=bc22d2c65c9153f59961e5926b190b66&oe=5C83654D",
     link: "https://vimeo.com/213300154",
     synopsis: "Lorem ipsum dolor sit amet, consectetur",
     role: "Editor",
@@ -177,62 +177,61 @@ const film6 = new Film({
     awards: "Telly Award, BC Best Screenwriter Award"
 })
 const film7 = new Film({
-    name: "GTW",
-    image: "/public/images/clapper.jpeg",
-    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    name: "Believer",
-    synopsis: "Lorem ipsum dolor sit amet, consectetur",
-    role: "Editor",
-    type: "Music Video",
+    name: "Second Generation Wedding",
+    image: "https://m.media-amazon.com/images/M/MV5BOTc5NWNjOWItMjQ3YS00YjUwLWEzNDEtMjliMDUyMTQ5YjcwXkEyXkFqcGdeQXVyMjQ2NTQwNzA@._V1_SY1000_CR0,0,666,1000_AL_.jpg",
+    link: "https://www.onescribemedia.com/second-generation-wedding",
+    synopsis: "A Nigerian-American bride makes a plan to confront her mother to gain autonomy over her wedding day, but is derailed by a secret that could forever change the course of her family's future.",
+    role: "Writer/Director",
+    type: "Film",
     year: 2018,
-    location: "Brooklyn NY",
-    awards: "Telly Award, BC Best Screenwriter Award"
+    location: "New York",
+    awards: "In Post-Production"
 })
 
 const film8 = new Film({
-    name: "Back to the Future",
-    image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    synopsis: "Lorem ipsum dolor sit amet, consectetur",
-    role: "Director",
+    name: "Privilege Unhinged",
+    image: "https://m.media-amazon.com/images/M/MV5BN2VhNDMxODctMGQxNi00MmNkLWE5OGQtN2M5NTliMzUyNDc1XkEyXkFqcGdeQXVyNjg4OTMyMTM@._V1_SY1000_CR0,0,707,1000_AL_.jpg",
+    link: "https://www.imdb.com/title/tt1602010/videoplayer/vi915867161?ref_=tt_ov_vi",
+    synopsis: "A young black professional struggles to speak up about racial disparities at her job after a very tense encounter with colleagues.",
+    role: "Director/Writer",
     type: "Film",
-    year: 2011,
-    location: "Brooklyn NY",
-    awards: "Telly Award, BC Best Screenwriter Award"
+    year: 2017,
+    location: "New York",
+    awards: "Screening"
 })
 const film9 = new Film({
-    name: "Back to the Future",
-    image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    synopsis: "Lorem ipsum dolor sit amet, consectetur",
-    role: "Director",
-    type: "Film",
-    year: 2012,
+    name: "Granville T. Woods",
+    image: "http://www.coneyislandhistory.org/sites/default/files/hall-of-fame/images/granville-t-woods.jpg",
+    link: "https://www.youtube.com/watch?v=4PB6pYrUrr8&t=167s",
+    synopsis: "A compelling look into the life of African American Inventor Granville T. Woos",
+    role: "Narrator",
+    type: "Documentary",
+    year: 2010,
     location: "Brooklyn NY",
-    awards: "Telly Award, BC Best Screenwriter Award"
+    awards: "Telly Award"
 })
 const film10 = new Film({
-    name: "Back to the Future",
-    image: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
-    link: "https://www.youtube.com/watch?v=PSGxK8Ruvow",
-    synopsis: "Lorem ipsum dolor sit amet, consectetur",
-    role: "Director",
-    type: "Film",
-    year: 2012,
+    name: "Landmark Tours",
+    image: "http://www.subwaynut.com/irt/bleeckern6/bleeckern67.jpg",
+    link: "https://www.youtube.com/watch?v=240_76wqvj4",
+    synopsis: "A quick look at one of the original IRT stations' architecture (Bleeker Street) dating back to 1904 boasting classic mosaics and terra cotta finishes as well as some other restored and renovated stations.",
+    role: "Producer/Reporter",
+    type: "News Segment",
+    year: 2014,
     location: "Brooklyn NY",
-    awards: "Telly Award, BC Best Screenwriter Award",
+    awards: "Telly Award",
 })
 
 const user1 = new User({
-    username: "India G",
+    username: "India R. Guy",
     password: "1234",
     email: "sceneitpix@gmail.com",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    bio: "An aspiring Director since the age of 13, India R. Guy began her filmmaking career by chance, when she shot a short comedy about the life of a song through performing rights company ASCAP. She then went on to study Film at Brooklyn college, where she produced, write shot and edited a variety of films, music videos and documentaries. After graduating with a Bachelor of Arts in Film Production, she then when on to work at various News Television stations and Production companies in New York, as well as a brief stint aboard a cruise ship as a Broadcast Technician.  India is currently the senior editor for “Hello Again Memories” and “SceneIt Pictures”.",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/208171_10150149295942499_3384854_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=3c3860f0098c2d75265051e7cb4a26dc&oe=5C770518",
     films: [film1, film2]
 })
 const user2 = new User({
-    username: "JTov",
+    username: "Ja'Tovia Gary",
     password: "1234",
     email: "jatoviagary.films@gmail.com",
     bio: "Ja’Tovia M. Gary (b. Dallas, TX. 1984) is an artist and filmmaker currently living and working in Brooklyn, New York. Gary’s work seeks to liberate the distorted histories through which Black life is often viewed while fleshing out a nuanced and multivalent Black interiority. Through documentary film and experimental video art, Gary charts the ways structures of power shape our perceptions around representation, race, gender, sexuality, and violence. ",
@@ -240,26 +239,26 @@ const user2 = new User({
     films: [film3, film4]
 })
 const user3 = new User({
-    username: "Kirk R",
+    username: "Kirk Revil",
     password: "1234",
     email: "kirkrevil@gmail.com",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    bio: "Revil Media is a one-stop shop for all your video production needs. We cater to all budgets. We offer services in Video Production, Videography, Photography, and Video Editing. Video Production: We have produced several films, music videos, EPK’s and promotional videos. We work with our clients from concept to production, insuring that our clients get the most value for their buck. Each client gets personalized assistance that is catered to the needs of their project.",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/40640178_2387864784563143_8407232597398126592_n.jpg?_nc_cat=110&_nc_ht=scontent-atl3-1.xx&oh=011dff69f560483733e58f3cfda1d543&oe=5C6CF9F7",
     films: [film5, film6]
 })
 const user4 = new User({
-    username: "Alex E",
+    username: "Lande Yoosuf",
     password: "1234",
-    email: "alex@gmail.com",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/42935548_10100884613519373_1344308520081686528_n.jpg?_nc_cat=100&_nc_ht=scontent-atl3-1.xx&oh=1a771ebb0a423cbc5d9d237ace8b5673&oe=5C756282",
+    email: "lande@gmail.com",
+    bio: "Lande Yoosuf is a television industry professional with over 10 years of experience casting at networks such as MTV, NBC, WEtv, truTV and Bravo to name a few. Lande oversees all aspects of directing, casting and production at One Scribe Media with a strong emphasis on story composition. Lande is fully committed to ensuring that her client’s creative goals, vision and needs are met while keeping with One Scribe Media’s expressed brand.",
+    image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/1919178_10100382113787863_7630583830494781762_n.jpg?_nc_cat=101&_nc_ht=scontent-atl3-1.xx&oh=a14a6e6784971dab895f7eb261f1d956&oe=5CB26BBF",
     films: [film7, film8]
 })
 const user5 = new User({
-    username: "Dave W",
+    username: "Dave Wallen",
     password: "1234",
-    email: "lande@gmail.com",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    email: "dozwall@gmail.com",
+    bio: "Dave Wallen is a Television Production Professional (Freelance/Contract) with 9+ solid years of industry experience in various forms of media: Live Event, Commercial, Promotional, Corporate, Training, Industrial, Educational, Documentary, & Milestone; Strong creative ability to conceptualize, develop, and enterprise ideas from pre to post; Resourceful, proven abilities with strong problem solving skills; experience with colleagues at all levels; adaptable to meet changing and challenging demands.",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/10857812_10204399047689305_9171620012150857879_n.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=9bdf9dc98b33b38b3a3c0321cd4e9c41&oe=5C83769F",
     films: [film9, film10]
 })
