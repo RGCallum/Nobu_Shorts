@@ -6,9 +6,13 @@ const NavBarStyles = styled.div`
 *{
     margin: 0;
 }
-display: flex;
+display: flex ;
+flex-direction: row ;
+flex-wrap: wrap ;
+justify-content: flex-end ;
+align-items: center ;
+align-content: flex-end ;
 padding: 10px;
-justify-content: space-around;
 background: black;
 font-weight: 400;
 color: turquoise;
@@ -35,7 +39,7 @@ class NavBar extends Component {
                 <div>
                     <Link to="/"> 🏠 Home</Link>
                     <Link to="/users"> 🎬 Users</Link>
-                    <Link to="/users/:userId"> 🗂 Profile</Link>
+                    <Link to="/signup"> 🗂 Sign-Up</Link>
 
                 </div>
 

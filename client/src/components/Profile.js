@@ -148,31 +148,32 @@ class Profile extends Component {
                             type="text" name="username" placeholder={this.state.user.username}
                             value={this.state.user.username}
                         />
-                        <textarea
+                        <input
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            name="image" 
-                            value={this.state.user.image} 
+                            name="image" placeholder='Change Photo'
+                            // value={this.state.user.image} 
                         />   
                         <img src={this.state.user.image} alt="user pic" />
 
-                        <textarea
+                        <input
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            type='password' 
-                            value={this.state.user.password} name="password" 
+                            type='password' placeholder='Change Password'
+                            // value={this.state.user.password} 
+                            name="password" 
                         />                   
 
-                        <textarea
+                        <input
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            name="email" 
+                            name="email" placeholder='Email'
                             value={this.state.user.email} 
                         />
                         <textarea
                             onBlur={() => this.handleUpdate()}
                             onChange={this.handleChange}
-                            name="bio" 
+                            name="bio" placeholder='Your Bio'
                             value={this.state.user.bio} 
                         />
                         

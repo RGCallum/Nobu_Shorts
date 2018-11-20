@@ -10,7 +10,9 @@ flex-direction: column ;
 flex-wrap: wrap ;
 justify-content: center ;
 align-items: center ;
-align-content: center ;*{
+align-content: center ;
+
+*{
     margin: 0;
 }
 img{
@@ -42,7 +44,7 @@ animation: color-change-5x 30s linear infinite alternate both;
 const UserContainer = styled.div`
 border: inset #C0C0C0;
 background-color: #ffffff70;
-width: 40vw;
+width: 30vw;
 border-radius: 15px;
 display: flex ;
 flex-direction: column ;
@@ -50,7 +52,8 @@ flex-wrap: wrap ;
 justify-content: center ;
 align-items: center ;
 align-content: center ;
-padding: 20px;
+padding: 10px;
+box-shadow: 1px 1px 1px;
 
 `
 
@@ -111,7 +114,7 @@ class User extends Component {
     return (
       <div>
         <BkgdColors>
-
+        <br/>
           <h1>Featured Filmmakers: </h1>
 <br/>
           {this.state.users.map((user) => (
@@ -122,16 +125,14 @@ class User extends Component {
                 <h2>{user.username}</h2>  <br/>
                 <ProImg><img src={user.image} alt="profile pic"/></ProImg>
                   <br />
-                  <br/>
                 </Link>
                 <h5> {user.bio}</h5> 
-                <br />
                 <br />
               </UserContainer>
 
             </div>
 
-          ))}
+          ))} <br/>
 
           <h3>Sign-Up</h3>
           <form onSubmit={this.handleSubmit}>

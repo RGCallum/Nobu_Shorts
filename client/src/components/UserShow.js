@@ -212,7 +212,7 @@ class UserShow extends Component {
                                 <textarea
                                     onBlur={() => this.handleUpdate(film._id)}
                                     onChange={(event) => this.handleChange(event, film._id)}
-                                    name="image" 
+                                    name="image" placeholder='Photo'
                                 />                   <img src={film.image} alt="film pic" />
 
                                 <textarea
