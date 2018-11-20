@@ -16,7 +16,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  border-image: url('https://www.clipartmax.com/png/middle/137-1370477_clip-art-movie-medium-size-film-strip-border-png.png')
+  background-image: url('https://www.clipartmax.com/png/middle/137-1370477_clip-art-movie-medium-size-film-strip-border-png.png');
+  background-size: cover;
+  background-position: top;
 }
 
 .App-link {

@@ -18,9 +18,14 @@ z-index: 1;
 img{
   border: inset 2px;
 }
+h1{
+  color: black;
+  text-shadow: 1px 1px 1px white;
+}
 
 
-animation: color-change-5x 30s linear infinite alternate both;
+
+animation: color-change-5x 20s linear infinite alternate both;
 
 @keyframes color-change-5x {
   0% {
@@ -46,10 +51,11 @@ z-index: 3;
 position: absolute
 `
 const UserContainer = styled.div`
-border: inset #C0C0C0;
+background-image: url('/images/filmstrip.png');
+background-size: cover;
+background-position: top;
 background-color: #ffffff70;
-width: 30vw;
-border-radius: 15px;
+width: 45vw;
 display: flex ;
 flex-direction: column ;
 flex-wrap: wrap ;
@@ -58,6 +64,18 @@ align-items: center ;
 align-content: flex-end ;
 padding: 10px;
 box-shadow: 1px 1px 1px;
+h4{
+  margin-top: 2%;
+  color: black;
+  width: 30vw;
+  text-align: center;
+}
+h2{
+  margin-top: 15%;
+  text-shadow: 1px 1px 1px black;
+
+} 
+
 
 `
 
@@ -70,7 +88,7 @@ align-items: center ;
 align-content: center ;
 img{
   max-width: 150px;
-  border-radius: 500px;    
+  border-radius: 30px;
  }
 
 `
@@ -121,7 +139,7 @@ class User extends Component {
         <BkgdColors>
        
           <br />
-          <h1>Featured Filmmakers: </h1>
+          <h1>🎥 Featured Filmmakers: </h1>
           <br />
 
           {this.state.users.map((user) => (
@@ -131,10 +149,8 @@ class User extends Component {
                 <Link to={`/users/${user._id}`}>
                   <h2>{user.username}</h2>  <br />
                   <ProImg><img src={user.image} alt="profile pic" /></ProImg>
-                  <br />
                 </Link>
-                <h5> {user.bio}</h5>
-                <br />
+                <h4> {user.bio}</h4>
               </UserContainer>
 
             </div>
