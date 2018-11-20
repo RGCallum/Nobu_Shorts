@@ -267,9 +267,7 @@ const user5 = new User({
 
 User.remove({})
     .then(() => Film.remove({}))
-    // .then(() => Info.remove({}))
     .then(() => Film.insertMany([film1, film2, film3, film4, film5, film6, film7, film8, film9, film10]))
-    // .then(() => Info.insertMany([info1, info2, info3, info4, info5, info6, info7, info8, info9, info10]))
     .then(() => user1.save())
     .then(() => user2.save())
     .then(() => user3.save())

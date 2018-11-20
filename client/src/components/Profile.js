@@ -8,7 +8,7 @@ import Users from './Users';
 
 
 const UserStyles = styled.div`
-   display: flex;
+  display: flex;
   position: relative;
   flex-direction: column;
   width: 600px;
@@ -16,10 +16,8 @@ const UserStyles = styled.div`
   background: rgb(43, 172, 174, 0.6);
   border-radius: 2px;
   border: inset 5;
-  margin: 10px 0;
+  margin: 10px;
   
- 
-
   button {
     position: absolute;
     bottom: 5px;
@@ -64,8 +62,7 @@ const UsersContainerStyle = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: center;
-  background-color: rgba(232, 232, 232, 0.653);
-  
+  background-color: rgba(232, 232, 232, 0.653); 
 `
 
 const NameNButtonStyle = styled.div`
@@ -78,64 +75,44 @@ const NameNButtonStyle = styled.div`
 
 class Profile extends Component {
     state = {
-        users:[],
         user: {},
         username: '',
         password: '',
         email: '',
         bio: '',
         image: '',
-     
     }
 
-
     componentDidMount() {
-
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}`).then(res => {
             console.log(res.data)
             this.setState({
                 user: res.data,
-
             })
         })
     }
 
-
-    // handleDelete = (userId) => {
-    //     // console.log(req.params.id)
-    //     axios.delete(`/api/users/${userId}`).then(() => {
-    //         const newUsers = [...this.state.users]
-    //         const filtered = newUsers.filter(user => {
-    //             return user._id !== userId 
-    //         })
-    //         this.setState({ users: filtered })
-    //     })
-    // }
-
     handleDelete = userId => {
-
-        if (this.props.match.params.userId) {   
+       if (this.props.match.params.userId) {   
           const userId = this.props.match.params.userId;  
           console.log(userId);
           axios.delete(`/api/users/${userId}`)
-            .then(res => {this.setState({ user: res.data.user });
+          .then(res => {this.setState({ user: res.data.user });
         this.props.history.push(`/users/`)
 
     }) }
   }
 
-    handleChange = (event, userId) => {
-        const { value, name } = event.target
-        const newUsers = [...this.state.users]
-        const updatedValue = newUsers.map(user => {
-            if (user._id === userId) {
-                user[name] = value
-            }
-            return user
-        })
-
-        this.setState({ users: updatedValue })
+    handleChange = (event) => {
+        //take it
+        const user = {...this.state.user}
+        //change it
+        const name = event.target.name
+        const value = event.target.value    
+        user[name] = value
+        //put it back
+        this.setState({ user })
     }
 
     handleUpdate = () => {
@@ -143,9 +120,9 @@ class Profile extends Component {
         const updatedUser = this.state.user
         console.log(userId)
         axios.patch(`/api/users/${userId}`, updatedUser)
-            .then((res) => {
-                console.log(res.data)
-                this.setState({ user: this.state.user })
+        .then((res) => {
+        console.log(res.data)
+        this.setState({ user: this.state.user })
             })
     }
 
@@ -163,47 +140,47 @@ class Profile extends Component {
                 <UsersContainerStyle>
 
 
-                                    <UserStyles>
+                    <UserStyles>
 
-                                        <input
-                                            onBlur={() => this.handleUpdate()}
-                                            onChange={(event) => this.handleChange(event)}
-                                            type="text" name="username" placeholder={this.state.user.username}
-                                            // value={this.state.user.username}
-                                        />
-                                                                                <textarea
-                                            onBlur={() => this.handleUpdate()}
-                                            onChange={(event) => this.handleChange(event)}
-                                            name="image" 
-                                            value={this.state.user.image} 
-                                        />   
-                                        <img src={this.state.user.image} alt="user pic" />
+                        <input
+                            onBlur={() => this.handleUpdate()}
+                            onChange={(event) => this.handleChange(event)}
+                            type="text" name="username" placeholder={this.state.user.username}
+                            value={this.state.user.username}
+                        />
+                        <textarea
+                            onBlur={() => this.handleUpdate()}
+                            onChange={(event) => this.handleChange(event)}
+                            name="image" 
+                            value={this.state.user.image} 
+                        />   
+                        <img src={this.state.user.image} alt="user pic" />
 
-                                        <textarea
-                                            onBlur={() => this.handleUpdate()}
-                                            onChange={(event) => this.handleChange(event)}
-                                            type='password' 
-                                            value={this.state.user.password} name="password" 
-                                        />                   
+                        <textarea
+                            onBlur={() => this.handleUpdate()}
+                            onChange={(event) => this.handleChange(event)}
+                            type='password' 
+                            value={this.state.user.password} name="password" 
+                        />                   
 
-                                        <textarea
-                                            onBlur={() => this.handleUpdate()}
-                                            onChange={(event) => this.handleChange(event)}
-                                            name="email" 
-                                            value={this.state.user.email} 
-                                        />
-                                        <textarea
-                                            onBlur={() => this.handleUpdate()}
-                                            onChange={(event) => this.handleChange(event)}
-                                            name="bio" 
-                                            value={this.state.user.bio} 
-                                        />
-                                      
-                                     <Link to={`/users`}> 
-                                      <button onClick={this.handleDelete}>Delete User</button>
-                                      </Link> 
+                        <textarea
+                            onBlur={() => this.handleUpdate()}
+                            onChange={(event) => this.handleChange(event)}
+                            name="email" 
+                            value={this.state.user.email} 
+                        />
+                        <textarea
+                            onBlur={() => this.handleUpdate()}
+                            onChange={this.handleChange}
+                            name="bio" 
+                            value={this.state.user.bio} 
+                        />
+                        
+                        <Link to={`/users`}> 
+                        <button onClick={this.handleDelete}>Delete User</button>
+                        </Link> 
 
-                                    </UserStyles>
+                    </UserStyles>
                         </UsersContainerStyle>
                     </div>
  

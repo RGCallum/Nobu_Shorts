@@ -250,7 +250,6 @@ class UserShow extends Component {
                                             name="awards" value={film.awards} placeholder='Awards'
                                         />
                                         <button onClick={deleteFilm}>Delete Film</button>
-                                        <Link to={`/infos/${film._id}`}></Link>
 
 
 
