@@ -11,7 +11,7 @@ flex-wrap: wrap ;
 justify-content: center ;
 align-items: center ;
 align-content: center ;
-
+z-index: 1;
 *{
     margin: 0;
 }
@@ -41,6 +41,10 @@ animation: color-change-5x 30s linear infinite alternate both;
 }
 
 `
+const FilmRollImg = styled.div`
+z-index: 3;
+position: absolute
+`
 const UserContainer = styled.div`
 border: inset #C0C0C0;
 background-color: #ffffff70;
@@ -49,9 +53,9 @@ border-radius: 15px;
 display: flex ;
 flex-direction: column ;
 flex-wrap: wrap ;
-justify-content: center ;
+justify-content: space-around ;
 align-items: center ;
-align-content: center ;
+align-content: flex-end ;
 padding: 10px;
 box-shadow: 1px 1px 1px;
 
@@ -113,56 +117,35 @@ class User extends Component {
   render() {
     return (
       <div>
+
         <BkgdColors>
-        <br/>
+       
+          <br />
           <h1>Featured Filmmakers: </h1>
-<br/>
+          <br />
+
           {this.state.users.map((user) => (
             <div key={user._id}>
 
               <UserContainer>
-                <Link to={`/users/${user._id}`}> 
-                <h2>{user.username}</h2>  <br/>
-                <ProImg><img src={user.image} alt="profile pic"/></ProImg>
+                <Link to={`/users/${user._id}`}>
+                  <h2>{user.username}</h2>  <br />
+                  <ProImg><img src={user.image} alt="profile pic" /></ProImg>
                   <br />
                 </Link>
-                <h5> {user.bio}</h5> 
+                <h5> {user.bio}</h5>
                 <br />
               </UserContainer>
 
             </div>
 
-          ))} <br/>
+          ))} <br />
 
-          <h3>Sign-Up</h3>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label htmlFor="username">User Name: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.username} type="text" name="username" />
-            </div>
-            <div>
-              <label htmlFor="password">Password: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.password} type="password" name="password" />
-            </div>
-            <div>
-              <label htmlFor="email">Email: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
-            </div>
-            <div>
-              <label htmlFor="bio">Bio: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.bio} type="text" name="bio" />
-            </div>
-            <div>
-              <label htmlFor="image">Image: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.image} type="text" name="image" />
-            </div>
-            <div>
-              <label htmlFor="films">Films: </label>
-              <input onChange={this.handleChange} value={this.state.newUser.films} type="text" name="films" />
-            </div>
-            <button type="submit">Create User</button>
-          </form>
+
         </BkgdColors>
+        {/* <FilmRollImg>
+            <img src="/images/roll-of-film.png" alt="" />
+          </FilmRollImg> */}
       </div>
     );
   }

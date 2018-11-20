@@ -8,22 +8,22 @@ const io = require('socket.io')();
 
 mongoose.connect(process.env.MONGODB_URI); 
 
-io.on('connection', (client) => {
-  client.on('subscribeToTimer', (interval) => {
-    console.log('client is subscribing to timer with interval ', interval);
-    setInterval(() => {
-      client.emit('timer', new Date());
-    }, interval);
-  });
-});
+// io.on('connection', (client) => {
+//   client.on('subscribeToTimer', (interval) => {
+//     console.log('client is subscribing to timer with interval ', interval);
+//     setInterval(() => {
+//       client.emit('timer', new Date());
+//     }, interval);
+//   });
+// });
 const connection = mongoose.connection;
 connection.on('connected', () => {
   console.log('Mongoose Connected Successfully')
 })
 
-connection.on('error', (err) => {
-  console.log('Mongoose default connection error: ' + err);
-}) 
+// connection.on('error', (err) => {
+//   console.log('Mongoose default connection error: ' + err);
+// }) 
 
 app.use(bodyParser.json());
 app.get('/', (req,res) => {

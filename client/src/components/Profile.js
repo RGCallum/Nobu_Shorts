@@ -8,7 +8,7 @@ import Users from './Users';
 
 
 const UserStyles = styled.div`
-  display: flex;
+   display: flex;
   position: relative;
   flex-direction: column;
   width: 600px;
@@ -16,8 +16,10 @@ const UserStyles = styled.div`
   background: rgb(43, 172, 174, 0.6);
   border-radius: 2px;
   border: inset 5;
-  margin: 10px;
+  margin: 10px 0;
   
+ 
+
   button {
     position: absolute;
     bottom: 5px;
@@ -62,7 +64,8 @@ const UsersContainerStyle = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: center;
-  background-color: rgba(232, 232, 232, 0.653); 
+  background-color: rgba(232, 232, 232, 0.653);
+  
 `
 
 const NameNButtonStyle = styled.div`
@@ -98,7 +101,7 @@ class Profile extends Component {
           const userId = this.props.match.params.userId;  
           console.log(userId);
           axios.delete(`/api/users/${userId}`)
-          .then(res => {this.setState({ user: res.data.user });
+            .then(res => {this.setState({ user: res.data.user });
         this.props.history.push(`/users/`)
 
     }) }
@@ -109,8 +112,10 @@ class Profile extends Component {
         const user = {...this.state.user}
         //change it
         const name = event.target.name
-        const value = event.target.value    
+        const value = event.target.value
+        console.log(name, value)
         user[name] = value
+
         //put it back
         this.setState({ user })
     }
@@ -118,11 +123,11 @@ class Profile extends Component {
     handleUpdate = () => {
         const userId = this.props.match.params.id
         const updatedUser = this.state.user
-        console.log(userId)
+        // console.log(userId)
         axios.patch(`/api/users/${userId}`, updatedUser)
-        .then((res) => {
-        console.log(res.data)
-        this.setState({ user: this.state.user })
+            .then((res) => {
+                console.log(res.data)
+                this.setState({ user: this.state.user })
             })
     }
 
@@ -146,34 +151,33 @@ class Profile extends Component {
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
                             type="text" name="username" placeholder={this.state.user.username}
-                            value={this.state.user.username}
+                            // value={this.state.user.username}
                         />
-                        <input
+                        <textarea
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            name="image" placeholder='Change Photo'
-                            // value={this.state.user.image} 
+                            name="image" 
+                            value={this.state.user.image} 
                         />   
                         <img src={this.state.user.image} alt="user pic" />
 
-                        <input
+                        <textarea
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            type='password' placeholder='Change Password'
-                            // value={this.state.user.password} 
-                            name="password" 
+                            type='password' 
+                            value={this.state.user.password} name="password" 
                         />                   
 
-                        <input
+                        <textarea
                             onBlur={() => this.handleUpdate()}
                             onChange={(event) => this.handleChange(event)}
-                            name="email" placeholder='Email'
+                            name="email" 
                             value={this.state.user.email} 
                         />
                         <textarea
                             onBlur={() => this.handleUpdate()}
                             onChange={this.handleChange}
-                            name="bio" placeholder='Your Bio'
+                            name="bio" 
                             value={this.state.user.bio} 
                         />
                         
