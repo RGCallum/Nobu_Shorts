@@ -142,7 +142,7 @@ class User extends Component {
         {/* <FilmRollImg> */}
 
           <br />
-          <h1>🎥 Featured Filmmakers: </h1>
+          <h1>🎥 Featured Nobu Filmmakers: </h1>
           <br />
 
           {this.state.users.map((user) => (

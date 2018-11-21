@@ -10,7 +10,9 @@ flex-direction: column ;
 flex-wrap: wrap ;
 justify-content: center ;
 align-items: center ;
-align-content: center ;*{
+align-content: center ;
+
+*{
     margin: 0;
 }
 img{
@@ -37,6 +39,7 @@ animation: color-change-5x 30s linear infinite alternate both;
     background: #3bd80d;
   }
 }
+
 button{
   display: flex ;
   margin-left 38%;
