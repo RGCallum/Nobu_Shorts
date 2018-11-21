@@ -26,9 +26,9 @@ connection.on('error', (err) => {
 }) 
 
 app.use(bodyParser.json());
-app.get('/', (req,res) => {
-  res.send('Yo!')
-})
+// app.get('/', (req,res) => {
+//   res.send('Yo!')
+// })
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
