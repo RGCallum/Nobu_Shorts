@@ -5,27 +5,8 @@ import Users from './Users';
 
 
 const BkgdColors = styled.div`
-padding: 80px 100px 100px 100px;
-background-image: url('')
-
-// animation: color-change-5x 30s linear infinite alternate both;
-// @keyframes color-change-5x {
-//     0% {
-//       background: #19dcea;
-//     }
-//     25% {
-//       background: #b22cff;
-//     }
-//     50% {
-//       background: #ea2222;
-//     }
-//     75% {
-//       background: #f5be10;
-//     }
-//     100% {
-//       background: #3bd80d;
-//     }
-//   }
+padding: 100px 100px 100px 100px;
+background-image: url('/images/OldFilm2.gif')
 `
 const ImgStyles = styled.div`
 display:flex;
@@ -54,6 +35,8 @@ const TextStyles = styled.div`
     width: -30%;
     height: -10%;
     margin-top: -10%;
+    color: black;
+    text-shadow: 2px 2px 2px white; 
     
 `
 
@@ -173,14 +156,15 @@ button {
     bottom: 5px;
     right: 200px;
     color: white;
-    background: #1d355763;
+    background: rgba(233, 65, 35, 0.81);
     color: white;
+    text-shadow: 1px 1px 1px black;
     box-shadow: 2px 2px 2px black;
-
       font-size: 1.6rem;
       font-weight: bold;
       padding: 10px;
       border-radius: 5px;
+      border: solid 1px;
       animation: fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 7s both;
       @keyframes fade-in-fwd {
         0% {
@@ -205,15 +189,14 @@ class Home extends Component {
         return (
             <div>
 
-                {/* <img src="/images/roll-of-film.png" alt=""/> */}
                 <ImgStyles>
-                    <TextStyles>    
+                    <TextStyles>  
+                        <br/><br/><br/><br/><br/>  
                     <BkgdColors>
-                   
-                        <Welcome><h1> Welcome to NoBu Filmmakers</h1></Welcome> <br/> <br/>
+                        <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br/> <br/>
                        <ASpace> <h2>A space for Independent Filmmakers to display their work!</h2></ASpace>  <br/> <br/>
                        <Although><h2>Although your film may be created with "No Budget" </h2></Although><br/> <br/>
-                        <WeTreat> <h2>We treat it like a Blockbuster!</h2></WeTreat>
+                        <WeTreat> <h2>We treat it like a Blockbuster!💥</h2></WeTreat>
                        <br/><br/> <Link to="/users">
                        <HoverButton>
                         <button>Click to Enter </button>

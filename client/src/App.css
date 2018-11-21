@@ -15,11 +15,12 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgba(233, 65, 35, 0.81);
   background-image: url('https://www.clipartmax.com/png/middle/137-1370477_clip-art-movie-medium-size-film-strip-border-png.png');
   background-size: cover;
   background-position: top;
   font-weight: bold
+  
 }
 
 .App-link {

@@ -231,7 +231,7 @@ class Profile extends Component {
                                     value={this.state.user.bio}
                                 />
 
-                                <Link to={`/users`}>
+                                <Link to={`/users/`}>
                                     <button onClick={this.handleDelete}>Delete User</button>
                                 </Link>
 
