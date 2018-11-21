@@ -37,15 +37,35 @@ animation: color-change-5x 30s linear infinite alternate both;
     background: #3bd80d;
   }
 }
-
+button{
+  display: flex ;
+  flex-direction: row ;
+  flex-wrap: wrap ;
+  justify-content: center ;
+  align-items: center ;
+  align-content: center ;
+  background: #1d355763;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  a {
+    color: #FFF;
+  }
+  a:hover {
+     color: #FFF
+  }}
 `
 const UserContainer = styled.div`
 
-border: inset #C0C0C0;
 background-color: #ffffff70;
+background-image: url('/images/filmstrip.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat:no-repeat;
 width: 50vw;
 height: 100vh;
-border-radius: 15px;
 display: flex ;
 flex-direction: column ;
 flex-wrap: wrap ;
@@ -54,7 +74,13 @@ align-items: center ;
 align-content: center ;
 padding: 10px;
 box-shadow: 1px 1px 1px;
+
+input{
+  max-width: 410px;
+}
+
 `
+
 
 class User extends Component {
     state = {
@@ -101,48 +127,47 @@ class User extends Component {
  
  <BkgdColors>
  <UserContainer>
-            <h1>Sign-Up to be a featured Filmmaker</h1>
-            <br/>
-            <h2>   <form onSubmit={this.handleSubmit}>
+            <h1>Sign-Up to be Featured</h1>
+            <h3>   <form onSubmit={this.handleSubmit}>
             <br/>
 
               <div>
-                <label htmlFor="username">User Name: </label>
+                <label htmlFor="username">User Name: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.username} type="text" name="username" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="password">Password: </label>
+                <label htmlFor="password">Password: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.password} type="password" name="password" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="email">Email: </label>
+                <label htmlFor="email">Email: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="bio">Bio: </label>
+                <label htmlFor="bio">Bio: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.bio} type="text" name="bio" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="image">Image: </label>
+                <label htmlFor="image">Image: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.image} type="text" name="image" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="films">Films: </label>
+                <label htmlFor="films">Films: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.films} type="text" name="films" />
               </div>
               <br/>
-              <button type="submit">Create User</button>
-            </form></h2>
+              <button type="submit">Add me</button>
+            </form></h3>
             </UserContainer>
             </BkgdColors>
         </div>

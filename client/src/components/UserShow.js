@@ -47,7 +47,7 @@ const FilmStyles = styled.div`
   flex-direction: column;
   width: 600px;
   height: 600px;
-  background: rgb(43, 172, 174, 0.6);
+  background: rgb(43, 172, 174, 0.5);
   border-radius: 2px;
   border: inset 5;
   margin: 10px 0;
@@ -77,9 +77,11 @@ const FilmStyles = styled.div`
     background-color: transparent;
     border: none;
     display: flex;
+    margin-left: 100px;    
     // justify-content: center;
     text-align: center;
-    margin-left: 100px;    
+    font-weight: bold;
+    // text-shadow: 1px 1px 1px white;
     color: black;
     max-width: 420px;
 }
@@ -93,10 +95,11 @@ const FilmStyles = styled.div`
 `
 
 const NewFilmButton = styled.button`
-  background: #1d3557;
+  background: #1d355763;
   color: white;
-  font-size: 1.3rem;
-  padding: 10px 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 10px ;
   border-radius: 5px;
 
 `
@@ -127,10 +130,11 @@ align-content: flex-end ;
 
 
 const EditProButton = styled.button`
-  background: #1d3557;
-  color: white;
-  font-size: 1.3rem;
-  padding: 10px 10px;
+background: #1d355763;
+color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 10px;
   border-radius: 5px;
   a {
     color: #FFF;
@@ -255,7 +259,7 @@ class UserShow extends Component {
                         <h4>Type in the fields below to automatically edit your film's information or...</h4>
                          <br/> 
                         <NewFilmButton onClick={this.handleCreateNewFilm}>
-                            Click to add a New Film
+                            Add a New Film
                         </NewFilmButton>
                     </FilmEditButton>
                     <div> <br />

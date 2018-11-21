@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #ffffff89;
+  background-color: #ffffff23;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@
   background-image: url('https://www.clipartmax.com/png/middle/137-1370477_clip-art-movie-medium-size-film-strip-border-png.png');
   background-size: cover;
   background-position: top;
+  font-weight: bold
 }
 
 .App-link {
