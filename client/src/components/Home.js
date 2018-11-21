@@ -6,7 +6,7 @@ import Users from './Users';
 
 const BkgdColors = styled.div`
 padding: 100px 100px 100px 100px;
-background-image: url('/images/OldFilm2.gif')
+background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif')
 `
 const ImgStyles = styled.div`
 display:flex;
@@ -35,8 +35,9 @@ const TextStyles = styled.div`
     width: -30%;
     height: -10%;
     margin-top: -10%;
-    color: black;
-    text-shadow: 2px 2px 2px white; 
+    color: white;
+    text-shadow: 2px 2px 2px black; 
+    box-shadow: 2px 2px 2px black;
     
 `
 
@@ -153,10 +154,11 @@ const HoverButton = styled.div`
 display: flex ;
 justify-content: center ;
 button {
+    // background-image: url('https://media1.tenor.com/images/50088e71808305ae9af6f56246d60136/tenor.gif?itemid=11660643');
+    height: 33.5px; //dont erase, this is keeping image on movie screen
     bottom: 5px;
     right: 200px;
-    color: white;
-    background: rgba(233, 65, 35, 0.81);
+    background-color: rgba(233, 65, 35, 0.81);
     color: white;
     text-shadow: 1px 1px 1px black;
     box-shadow: 2px 2px 2px black;
@@ -193,7 +195,7 @@ class Home extends Component {
                     <TextStyles>  
                         <br/><br/><br/><br/><br/>  
                     <BkgdColors>
-                        <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br/> <br/>
+                        <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br/> <br/> 
                        <ASpace> <h2>A space for Independent Filmmakers to display their work!</h2></ASpace>  <br/> <br/>
                        <Although><h2>Although your film may be created with "No Budget" </h2></Although><br/> <br/>
                         <WeTreat> <h2>We treat it like a Blockbuster!💥</h2></WeTreat>
