@@ -17,6 +17,8 @@ z-index: 1;
 }
 img{
   border: inset 2px;
+  box-shadow: 1px 1px 1px black;
+
 }
 h1{
   color: black;
@@ -47,8 +49,8 @@ animation: color-change-5x 20s linear infinite alternate both;
 
 `
 const FilmRollImg = styled.div`
-z-index: 3;
-position: absolute
+background-image: url('/images/roll-of-film.png')
+
 `
 const UserContainer = styled.div`
 background-image: url('/images/filmstrip.png');
@@ -137,7 +139,8 @@ class User extends Component {
       <div>
 
         <BkgdColors>
-       
+        {/* <FilmRollImg> */}
+
           <br />
           <h1>🎥 Featured Filmmakers: </h1>
           <br />
@@ -157,11 +160,9 @@ class User extends Component {
 
           ))} <br />
 
+          {/* </FilmRollImg> */}
 
         </BkgdColors>
-        {/* <FilmRollImg>
-            <img src="/images/roll-of-film.png" alt="" />
-          </FilmRollImg> */}
       </div>
     );
   }

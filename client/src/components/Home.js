@@ -4,6 +4,29 @@ import { Link } from 'react-router-dom'
 import Users from './Users';
 
 
+const BkgdColors = styled.div`
+padding: 80px 100px 100px 100px;
+background-image: url('')
+
+// animation: color-change-5x 30s linear infinite alternate both;
+// @keyframes color-change-5x {
+//     0% {
+//       background: #19dcea;
+//     }
+//     25% {
+//       background: #b22cff;
+//     }
+//     50% {
+//       background: #ea2222;
+//     }
+//     75% {
+//       background: #f5be10;
+//     }
+//     100% {
+//       background: #3bd80d;
+//     }
+//   }
+`
 const ImgStyles = styled.div`
 display:flex;
 *{
@@ -22,12 +45,9 @@ width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
 //   margin-top: 100;
-
-
-
 }`
 
-const CountStyles = styled.div`
+const TextStyles = styled.div`
     z-index: 1;
     position: absolute;
     background-size: 10%;
@@ -38,28 +58,29 @@ const CountStyles = styled.div`
 `
 
 const Welcome = styled.div`
-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-@keyframes slide-in-blurred-top {
+display: flex ;
+justify-content: center ;
+font-size:10vw;
+animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.8s both;
+@keyframes tracking-in-expand {
     0% {
-              transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
-              transform-origin: 50% 0%;
-              filter: blur(40px);
+      letter-spacing: -0.5em;
       opacity: 0;
     }
+    40% {
+      opacity: 0.6;
+    }
     100% {
-              transform: translateY(0) scaleY(1) scaleX(1);
-              transform-origin: 50% 50%;
-              filter: blur(0);
       opacity: 1;
     }
   }
 
-
-  
-
 `
 const ASpace = styled.div`
-
+display: flex ;
+justify-content: flex-start ;
+margin-left: -5%;
+font-size:5vw;
 animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 2s both;
 @keyframes slide-in-blurred-right {
     0% {
@@ -79,7 +100,10 @@ animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 2s
 `
 
 const Although = styled.div`
-
+display: flex ;
+justify-content: flex-end ;
+margin-left: 8%;
+font-size:5vw;
 animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 3.5s both;
 @keyframes slide-in-blurred-left {
     0% {
@@ -100,8 +124,10 @@ animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 3.5
 
 
 const WeTreat = styled.div`
-
-animation: bounce-in-top 1.1s 5.5s both;
+display: flex ;
+justify-content: center ;
+font-size:5vw;
+animation: bounce-in-top 1.1s 5s both;
 @keyframes bounce-in-top {
     0% {
               transform: translateY(-500px);
@@ -141,12 +167,16 @@ animation: bounce-in-top 1.1s 5.5s both;
 
 `
 const HoverButton = styled.div`
+display: flex ;
+justify-content: center ;
 button {
     bottom: 5px;
     right: 200px;
     color: white;
     background: #1d355763;
     color: white;
+    box-shadow: 2px 2px 2px black;
+
       font-size: 1.6rem;
       font-weight: bold;
       padding: 10px;
@@ -174,20 +204,24 @@ class Home extends Component {
     render() {
         return (
             <div>
+
+                {/* <img src="/images/roll-of-film.png" alt=""/> */}
                 <ImgStyles>
-                    <CountStyles>
-                        
-                        <Welcome><h1> Welcome to NoBu Filmmakers</h1></Welcome> <br/>
-                       <ASpace> <h2>A space for Independent Filmmakers to display their work!</h2></ASpace>  <br/>
-                       <Although><h2>Although your film may be created with "No Budget" </h2></Although><br/>
+                    <TextStyles>    
+                    <BkgdColors>
+                   
+                        <Welcome><h1> Welcome to NoBu Filmmakers</h1></Welcome> <br/> <br/>
+                       <ASpace> <h2>A space for Independent Filmmakers to display their work!</h2></ASpace>  <br/> <br/>
+                       <Although><h2>Although your film may be created with "No Budget" </h2></Although><br/> <br/>
                         <WeTreat> <h2>We treat it like a Blockbuster!</h2></WeTreat>
-                       <br/> <Link to="/users">
+                       <br/><br/> <Link to="/users">
                        <HoverButton>
                         <button>Click to Enter </button>
                         </HoverButton>
                         </Link>
-  {/* <img id = 'countdown' src="/images/clapping.gif" alt="countdown"/> */}
-                     </CountStyles> 
+                        </BkgdColors>
+
+                     </TextStyles> 
                     <img src="/images/blankScreenTheatre3.png" alt="curtain" />
                 </ImgStyles>
 

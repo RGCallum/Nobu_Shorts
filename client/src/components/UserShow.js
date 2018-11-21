@@ -13,6 +13,8 @@ const BkgdColors = styled.div`
 }
 img{
   border: inset 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
 }
 h1{
   color: black;
@@ -55,6 +57,7 @@ const FilmStyles = styled.div`
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
+  
   img{
     margin-left: 30%;
     max-width: 150px;
@@ -70,6 +73,9 @@ const FilmStyles = styled.div`
     color: white;
     background-color: red;
     border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    font-weight: bold;
+
   }
 
   input, textarea {
@@ -101,6 +107,8 @@ const NewFilmButton = styled.button`
   font-weight: bold;
   padding: 10px ;
   border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+
 
 `
 
@@ -131,6 +139,8 @@ align-content: flex-end ;
 
 const EditProButton = styled.button`
 background: #1d355763;
+box-shadow: 2px 2px 2px black;
+
 color: white;
   font-size: 1.6rem;
   font-weight: bold;
@@ -284,12 +294,12 @@ class UserShow extends Component {
                                             name="image" placeholder='Edit Photo'
                                         />                   <img src={film.image} alt="film pic" />
 
-                                        <input
+                                        <h2><input
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             type="text" name="name" placeholder='Edit film name'
                                             value={film.name}
-                                        />
+                                        /></h2>
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}

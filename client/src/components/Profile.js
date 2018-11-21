@@ -12,10 +12,13 @@ const BkgdColors = styled.div`
 }
 img{
   border: inset 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
 }
-h1{
+h1, h2{
   color: black;
   text-shadow: 1px 1px 1px white;
+  
 }
 
 animation: color-change-5x 30s linear infinite alternate both;
@@ -65,8 +68,11 @@ display: flex;
     bottom: 25px;
     right: 260px;
     color: white;
+    font-weight: bold;
     background-color: red;
     border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+
   }
 
   input, textarea {
@@ -78,7 +84,7 @@ display: flex;
     text-align: center;
     margin-left: 100px;    
     font-weight: bold;
-    text-shadow: 1px 1px 1px white;
+    // text-shadow: 1px 1px 1px white;
     color: black;
     max-width: 410px;
 }
@@ -179,10 +185,12 @@ class Profile extends Component {
                     <br />
                     <NameNButtonStyle>
                         <h1>{this.state.user.username}'s Profile </h1><br />
-                        <img src={this.state.user.image} alt="film pic" /><br />
+                        <img src={this.state.user.image} alt="film pic" />
                     </NameNButtonStyle>
 
-                    <div> <h4>Type in field to edit </h4>   
+                    <div> 
+                    <h2><Link to={`/users/${this.props.match.params.userId}`}> 🔙  </Link></h2> <br/>
+                    <h4>Type in field below to edit Profile </h4> 
                 <UsersContainerStyle>
 
 

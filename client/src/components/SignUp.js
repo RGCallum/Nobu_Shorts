@@ -39,23 +39,26 @@ animation: color-change-5x 30s linear infinite alternate both;
 }
 button{
   display: flex ;
-  flex-direction: row ;
-  flex-wrap: wrap ;
-  justify-content: center ;
-  align-items: center ;
+  margin-left 38%;
   align-content: center ;
-  background: #1d355763;
+  background: #1d355773;
   color: white;
   font-size: 1.8rem;
   font-weight: bold;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
+
   a {
     color: #FFF;
   }
   a:hover {
      color: #FFF
-  }}
+  }
+`
+const FilmRollImg = styled.div`
+background-image: url('/images/roll-of-film.png')
+
 `
 const UserContainer = styled.div`
 
@@ -76,7 +79,7 @@ padding: 10px;
 box-shadow: 1px 1px 1px;
 
 input{
-  max-width: 410px;
+  width: 410px;
 }
 
 `
@@ -126,6 +129,8 @@ class User extends Component {
         <div>
  
  <BkgdColors>
+        {/* <FilmRollImg> */}
+
  <UserContainer>
             <h1>Sign-Up to be Featured</h1>
             <h3>   <form onSubmit={this.handleSubmit}>
@@ -169,6 +174,8 @@ class User extends Component {
               <button type="submit">Add me</button>
             </form></h3>
             </UserContainer>
+                    {/* </FilmRollImg> */}
+
             </BkgdColors>
         </div>
       )} }
