@@ -146,8 +146,8 @@ class Profile extends Component {
             console.log(userId);
             axios.delete(`/api/users/${userId}`)
                 .then(res => {
-                    this.setState({ user: res.data.user });
-                    this.props.history.push(`/users`)
+                    this.setState({ user: res.data.user, redirect: true });
+                    this.props.history.push(`/users/`)
 
                 })
         }
@@ -169,7 +169,6 @@ class Profile extends Component {
     handleUpdate = () => {
         const userId = this.props.match.params.id
         const updatedUser = this.state.user
-        // console.log(userId)
         axios.patch(`/api/users/${userId}`, updatedUser)
             .then((res) => {
                 console.log(res.data)
@@ -231,9 +230,9 @@ class Profile extends Component {
                                     value={this.state.user.bio}
                                 />
 
-                                {/* <Link to={`/users/`}> */}
+                                <Link to={`/users/`}>
                                     <button onClick={this.handleDelete}>Delete User</button>
-                                {/* </Link> */}
+                                </Link>
 
                             </UserStyles>
                         </UsersContainerStyle>

@@ -164,12 +164,7 @@ class User extends Component {
                 <label htmlFor="image">Image: </label> <br/>
                 <input onChange={this.handleChange} value={this.state.newUser.image} type="text" name="image" />
               </div>
-              <br/>
-
-              <div>
-                <label htmlFor="films">Films: </label> <br/>
-                <input onChange={this.handleChange} value={this.state.newUser.films} type="text" name="films" />
-              </div>
+              
               <br/>
               <button type="submit">Add me</button>
             </form></h3>
