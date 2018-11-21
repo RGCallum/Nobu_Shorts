@@ -130,8 +130,7 @@ align-items: center ;
 align-content: flex-end ;
   img{
     max-width: 200px;
-    max-height: 200px;
-        
+    max-height: 200px;      
    }
 `
 
@@ -139,7 +138,6 @@ align-content: flex-end ;
 const EditProButton = styled.button`
 background: #1d355763;
 box-shadow: 2px 2px 2px black;
-
 color: white;
   font-size: 1.6rem;
   font-weight: bold;
@@ -185,7 +183,6 @@ class UserShow extends Component {
         }
     }
 
-
     componentDidMount() {
         // make an api call to get one single user
         // On the server URL is '/api/users/:userId'
@@ -205,7 +202,6 @@ class UserShow extends Component {
             name: 'Film Name',
             image: 'image',
             link: 'link',
-            //   info: 'Film Description'
 
         }
         axios.post(`/api/users/${userId}/films`, payload).then(res => {
@@ -225,8 +221,6 @@ class UserShow extends Component {
         })
     }
 
-
-
     handleChange = (event, filmId) => {
         const { value, name } = event.target
         const newFilms = [...this.state.films]
@@ -236,7 +230,6 @@ class UserShow extends Component {
             }
             return film
         })
-
         this.setState({ films: updatedValue })
     }
 
@@ -252,7 +245,6 @@ class UserShow extends Component {
     render() {
         return (
             <div>
-
                 <BkgdColors>
                     <br />
                     <NameNButtonStyle>
@@ -266,33 +258,25 @@ class UserShow extends Component {
                         </EditProButton>
                         <br />
                         <h4>Type in the fields below to automatically edit your film's information or...</h4>
-                         <br/> 
+                        <br />
                         <NewFilmButton onClick={this.handleCreateNewFilm}>
                             Add a New Film
                         </NewFilmButton>
                     </FilmEditButton>
                     <div> <br />
                         <FilmsContainerStyle>
-
                             {this.state.films.map(film => {
                                 const deleteFilm = () => {
-
                                     return this.handleDelete(film._id)
-
                                 }
-
                                 return (
-
                                     <FilmStyles>
-
-
-
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="image" placeholder='Edit Photo'
-                                        />                   <img src={film.image} alt="film pic" />
-
+                                            name="image" placeholder='Add new photo here'
+                                        />
+                                        <img src={film.image} alt="film pic" />
                                         <h2><input
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}

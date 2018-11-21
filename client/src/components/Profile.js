@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Users from './Users';
 
 
 const BkgdColors = styled.div`
-
 *{
     margin: 0;
 }
@@ -148,7 +146,6 @@ class Profile extends Component {
                 .then(res => {
                     this.setState({ user: res.data.user, redirect: true });
                     this.props.history.push(`/users/`)
-
                 })
         }
     }
@@ -161,7 +158,6 @@ class Profile extends Component {
         const value = event.target.value
         console.log(name, value)
         user[name] = value
-
         //put it back
         this.setState({ user })
     }
@@ -180,26 +176,23 @@ class Profile extends Component {
 
         return (
             <div>
-                <BkgdColors>
-                    <br />
+                <BkgdColors><br />
+
                     <NameNButtonStyle>
                         <h1>{this.state.user.username}'s Profile </h1><br />
                         <img src={this.state.user.image} alt="film pic" />
                     </NameNButtonStyle>
 
-                    <div> 
-                    <h2><Link to={`/users/${this.props.match.params.userId}`}> 🔙  </Link></h2> <br/>
-                    <h4>Type in field below to edit Profile </h4> 
-                <UsersContainerStyle>
-
-
+                    <div>
+                        <h2><Link to={`/users/${this.props.match.params.userId}`}> 🔙  </Link></h2> <br />
+                        <h4>Type in field below to edit Profile </h4>
+                        <UsersContainerStyle>
                             <UserStyles>
-
                                 <input
                                     onBlur={() => this.handleUpdate()}
                                     onChange={(event) => this.handleChange(event)}
                                     type="text" name="username" placeholder={this.state.user.username}
-                                value={this.state.user.username}
+                                    value={this.state.user.username}
                                 />
                                 <textarea
                                     onBlur={() => this.handleUpdate()}
@@ -208,7 +201,6 @@ class Profile extends Component {
                                     value={this.state.user.image}
                                 />
                                 {/* <img src={this.state.user.image} alt="user pic" /> */}
-
                                 <textarea
                                     onBlur={() => this.handleUpdate()}
                                     onChange={(event) => this.handleChange(event)}
@@ -216,7 +208,6 @@ class Profile extends Component {
                                     // value={this.state.user.password} 
                                     name="password"
                                 />
-
                                 <textarea
                                     onBlur={() => this.handleUpdate()}
                                     onChange={(event) => this.handleChange(event)}
@@ -237,8 +228,7 @@ class Profile extends Component {
                             </UserStyles>
                         </UsersContainerStyle>
                     </div>
-
-                    </BkgdColors>
+                </BkgdColors>
             </div>
         )
     }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Users from './Users';
 
 
 const BkgdColors = styled.div`
@@ -102,10 +101,8 @@ animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 3.5
               filter: blur(0);
       opacity: 1;
     }
-  }
-  
+  }  
 `
-
 
 const WeTreat = styled.div`
 display: flex ;
@@ -164,7 +161,6 @@ button {
     box-shadow: 2px 2px 2px black;
       font-size: 1.6rem;
       font-weight: bold;
-      padding: 10px;
       border-radius: 5px;
       border: solid 1px;
       animation: fade-in-fwd 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 7s both;
@@ -180,36 +176,27 @@ button {
       }
 `
 
-
-
-
-
-
-
 class Home extends Component {
     render() {
         return (
             <div>
-
                 <ImgStyles>
-                    <TextStyles>  
-                        <br/><br/><br/><br/><br/>  
-                    <BkgdColors>
-                        <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br/> <br/> 
-                       <ASpace> <h2>A space for Independent Filmmakers to display their work.</h2></ASpace>  <br/> <br/>
-                       <Although><h2>Although your film may be created with "No Budget" </h2></Although><br/> <br/>
-                        <WeTreat> <h2>We still treat it like a Blockbuster!💥</h2></WeTreat>
-                       <br/><br/> <Link to="/users">
-                       <HoverButton>
-                        <button>Click to Enter </button>
-                        </HoverButton>
-                        </Link>
+                    <TextStyles>
+                        <br /><br /><br /><br /><br />
+                        <BkgdColors>
+                            <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br /> <br />
+                            <ASpace> <h2>A space for Independent Filmmakers to display their work.</h2></ASpace>  <br /> <br />
+                            <Although><h2>Although your film may be created with "No Budget" </h2></Although><br /> <br />
+                            <WeTreat> <h2>We still treat it like a Blockbuster!💥</h2></WeTreat><br /><br />
+                            <Link to="/users">
+                                <HoverButton>
+                                    <button>Click to Enter </button>
+                                </HoverButton>
+                            </Link>
                         </BkgdColors>
-
-                     </TextStyles> 
+                    </TextStyles>
                     <img src="/images/blankScreenTheatre3.png" alt="curtain" />
                 </ImgStyles>
-
             </div>
         );
     }

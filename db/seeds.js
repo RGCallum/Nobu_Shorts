@@ -1,6 +1,5 @@
 const User = require('../models/User.js')
 const Film = require('../models/Film.js')
-const Info = require('../models/Info.js')
 const mongoose = require('./connections')
 
 

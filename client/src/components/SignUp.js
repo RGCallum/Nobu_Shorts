@@ -86,95 +86,92 @@ input{
 }
 
 `
-
-
 class User extends Component {
-    state = {
-      users: [],
-      newUser: {
-        username: '',
-        password: '',
-        email: '',
-        bio: '',
-        image: '',
-      }
+  state = {
+    users: [],
+    newUser: {
+      username: '',
+      password: '',
+      email: '',
+      bio: '',
+      image: '',
     }
-  
-    handleChange = (event) => {
-      const updatedNewUser = { ...this.state.newUser }
-  
-      updatedNewUser[event.target.name] = event.target.value
-      this.setState({ newUser: updatedNewUser })
-    }
-  
-    handleSubmit = (event) => {
-      event.preventDefault()
-  
-      axios.post('/api/users', this.state.newUser).then(res => {
-        console.log(res.data)
-        this.props.history.push(`/users/${res.data._id}`)
-      })
-  
-    }
-  
-    getAllUsers = () => {
-      axios.get('/api/users').then((res) => {
-        this.setState({ users: res.data })
-      })
-    }
-  
-    componentDidMount() {
-      this.getAllUsers()
-    }
-  
-    render() {
-      return (
-        <div>
- 
- <BkgdColors>
-        {/* <FilmRollImg> */}
+  }
 
- <UserContainer>
+  handleChange = (event) => {
+    const updatedNewUser = { ...this.state.newUser }
+
+    updatedNewUser[event.target.name] = event.target.value
+    this.setState({ newUser: updatedNewUser })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+
+    axios.post('/api/users', this.state.newUser).then(res => {
+      console.log(res.data)
+      this.props.history.push(`/users/${res.data._id}`)
+    })
+  }
+
+  getAllUsers = () => {
+    axios.get('/api/users').then((res) => {
+      this.setState({ users: res.data })
+    })
+  }
+
+  componentDidMount() {
+    this.getAllUsers()
+  }
+
+  render() {
+    return (
+      <div>
+
+        <BkgdColors>
+          {/* <FilmRollImg> */}
+          <UserContainer>
             <h1>Sign-Up to be Featured</h1>
             <h3>   <form onSubmit={this.handleSubmit}>
-            <br/>
+              <br />
 
               <div>
-                <label htmlFor="username">User Name: </label> <br/>
+                <label htmlFor="username">User Name: </label> <br />
                 <input onChange={this.handleChange} value={this.state.newUser.username} type="text" name="username" />
               </div>
-              <br/>
+              <br />
 
               <div>
-                <label htmlFor="password">Password: </label> <br/>
+                <label htmlFor="password">Password: </label> <br />
                 <input onChange={this.handleChange} value={this.state.newUser.password} type="password" name="password" />
               </div>
-              <br/>
+              <br />
 
               <div>
-                <label htmlFor="email">Email: </label> <br/>
+                <label htmlFor="email">Email: </label> <br />
                 <input onChange={this.handleChange} value={this.state.newUser.email} type="text" name="email" />
               </div>
-              <br/>
+              <br />
 
               <div>
-                <label htmlFor="bio">Bio: </label> <br/>
+                <label htmlFor="bio">Bio: </label> <br />
                 <input onChange={this.handleChange} value={this.state.newUser.bio} type="text" name="bio" />
               </div>
-              <br/>
+              <br />
 
               <div>
-                <label htmlFor="image">Image: </label> <br/>
+                <label htmlFor="image">Image: </label> <br />
                 <input onChange={this.handleChange} value={this.state.newUser.image} type="text" name="image" />
               </div>
-              
-              <br/>
-              <button type="submit">Add me</button>
-            </form></h3>
-            </UserContainer>
-                    {/* </FilmRollImg> */}
 
-            </BkgdColors>
-        </div>
-      )} }
-  export default User;
+              <br />
+              <button type="submit">Join</button>
+            </form></h3>
+          </UserContainer>
+          {/* </FilmRollImg> */}
+        </BkgdColors>
+      </div>
+    )
+  }
+}
+export default User;

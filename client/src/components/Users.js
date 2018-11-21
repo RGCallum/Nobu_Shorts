@@ -25,10 +25,7 @@ h1{
   text-shadow: 1px 1px 1px white;
 }
 
-
-
 animation: color-change-5x 20s linear infinite alternate both;
-
 @keyframes color-change-5x {
   0% {
     background: #19dcea;
@@ -77,8 +74,6 @@ h2{
   text-shadow: 1px 1px 1px black;
 
 } 
-
-
 `
 
 const ProImg = styled.div`
@@ -139,15 +134,11 @@ class User extends Component {
       <div>
 
         <BkgdColors>
-        {/* <FilmRollImg> */}
-
+          {/* <FilmRollImg> */}
           <br />
-          <h1>🎥 Featured Nobu Filmmakers: </h1>
-          <br />
-
+          <h1>🎥 Featured Nobu Filmmakers: </h1><br />
           {this.state.users.map((user) => (
             <div key={user._id}>
-
               <UserContainer>
                 <Link to={`/users/${user._id}`}>
                   <h2>{user.username}</h2>  <br />
@@ -155,13 +146,9 @@ class User extends Component {
                 </Link>
                 <h4> {user.bio}</h4>
               </UserContainer>
-
             </div>
-
           ))} <br />
-
           {/* </FilmRollImg> */}
-
         </BkgdColors>
       </div>
     );

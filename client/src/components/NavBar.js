@@ -27,19 +27,15 @@ a:hover{
 }
 `
 
-
-
 class NavBar extends Component {
     render() {
         return (
             <NavBarStyles>
                 <div>
-                    <Link to="/"> 🏠 Home</Link>
-                    <Link to="/users"> 🎬 Filmmakers</Link>
-                    <Link to="/signup"> 🗂 Sign-Up</Link>
-
+                    <Link to="/"> 🏠Home</Link>
+                    <Link to="/users"> 🎬Filmmakers</Link>
+                    <Link to="/signup"> 🗂Sign-Up</Link>
                 </div>
-
             </NavBarStyles>
         );
     }
