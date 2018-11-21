@@ -122,7 +122,7 @@ const user1 = new User({
     username: "India R. Guy",
     password: "1234",
     email: "sceneitpix@gmail.com",
-    bio: "An aspiring Director since the age of 13, India R. Guy began her filmmaking career by chance, when she shot a short comedy about the life of a song through performing rights company ASCAP. She then went on to study Film at Brooklyn college, where she produced, write shot and edited a variety of films, music videos and documentaries. After graduating with a Bachelor of Arts in Film Production, she then when on to work at various News Television stations and Production companies in New York, as well as a brief stint aboard a cruise ship as a Broadcast Technician.  India is currently the senior editor for “Hello Again Memories” and “SceneIt Pictures”.",
+    bio: "An aspiring Director since the age of 13, India R. Guy began her filmmaking career by chance, when she shot a short comedy about the life of a song through performing rights company ASCAP. She then went on to study Film at Brooklyn college, where she produced, wrote, shot and edited a variety of films, music videos and documentaries. After graduating with a Bachelor of Arts in Film Production, she then when on to work at various News Television stations and Production companies in New York, as well as a brief stint aboard a cruise ship as a Broadcast Technician. India is currently the senior editor for “Hello Again Memories” and “SceneIt Pictures”.",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/208171_10150149295942499_3384854_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=3c3860f0098c2d75265051e7cb4a26dc&oe=5C770518",
     films: [film1, film2]
 })

@@ -12,7 +12,7 @@ struggles, got an api key, no time to use it
 wishes 
 
 
-## Weblink: https://nobushorts.herokuapp.com/
+## Weblink: https://nobu-filmmakers.herokuapp.com/
 
 ## Trello link: https://trello.com/b/ye1Mz1dA/nobu-shorts
 
