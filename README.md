@@ -24,8 +24,10 @@ Software - Visual Studio, PhotoShop, Handlebars, Express, NodeJS, MongoDB, Mongo
 
 ## Project Planning & User Stories - Trello
 Wireframe handwritten on whiteboard
+![Wireframe](/client/public/ERD:Wireframe/NoBuFilmWireframe.jpg
 
 ERD by LucidChart
+![ERD](./images/img.jpg
 
 ## Version 2
 Social Searcher API
