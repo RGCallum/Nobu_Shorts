@@ -58,7 +58,7 @@ const FilmStyles = styled.div`
   background-repeat:no-repeat;
   
   img{
-    margin-left: 30%;
+    margin: auto;
     max-width: 150px;
     max-height: 150px;
 }
@@ -79,21 +79,21 @@ const FilmStyles = styled.div`
 
   input, textarea {
     height: 40px;
+    width: 500px;
     background-color: transparent;
     border: none;
     display: flex;
-    margin-left: 100px;    
-    // justify-content: center;
+    justify-content: center;
     text-align: center;
+    margin-left: 90px;
     font-weight: bold;
-    // text-shadow: 1px 1px 1px white;
     color: black;
     max-width: 420px;
 }
 
   img{
    max-width: 250px;
-   display: block;
+   display: flex;
    justify-content: center;
    border-radius: 5px;
   }
@@ -184,8 +184,6 @@ class UserShow extends Component {
     }
 
     componentDidMount() {
-        // make an api call to get one single user
-        // On the server URL is '/api/users/:userId'
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}`).then(res => {
             console.log(res.data)
@@ -238,7 +236,6 @@ class UserShow extends Component {
             return film._id === filmId
         })
         axios.patch(`/api/films/${filmId}`, filmToUpdate).then(() => {
-            console.log("Updated Film")
         })
     }
 
@@ -276,24 +273,26 @@ class UserShow extends Component {
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             name="image" placeholder='Add new photo here'
                                         />
-                                        <img src={film.image} alt="film pic" />
+
+                                       <a href={film.link}>  
+                                        <img src={film.image} alt="film pic" /></a> 
                                         <h2><input
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             type="text" name="name" placeholder='Edit film name'
                                             value={film.name}
                                         /></h2>
-                                        <textarea
+                                       <h4> 
+                                       <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="link" placeholder='Edit Link to film'
-                                        />
-                                        <Link to={film.link}>Watch {film.name} here</Link>
+                                            name="link" placeholder='Click Image to watch film or add new weblink here'
+                                        /> 
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             name="synopsis" value={film.synopsis} placeholder='Edit Synopsis'
-                                        />
+                                        /> <br/>
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
@@ -318,7 +317,7 @@ class UserShow extends Component {
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             name="awards" value={film.awards} placeholder='Awards'
-                                        />
+                                        /></h4>
                                         <button onClick={deleteFilm}>Delete Film</button>
                                     </FilmStyles>
                                 )

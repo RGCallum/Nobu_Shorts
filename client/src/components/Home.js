@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 const BkgdColors = styled.div`
-padding: 100px 100px 100px 100px;
+padding: 110px;
 background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif')
 `
 const ImgStyles = styled.div`
@@ -43,7 +43,7 @@ const TextStyles = styled.div`
 const Welcome = styled.div`
 display: flex ;
 justify-content: center ;
-font-size:10vw;
+font-size: 10vw;
 animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.8s both;
 @keyframes tracking-in-expand {
     0% {
@@ -152,7 +152,7 @@ display: flex ;
 justify-content: center ;
 button {
     // background-image: url('https://media1.tenor.com/images/50088e71808305ae9af6f56246d60136/tenor.gif?itemid=11660643');
-    height: 33.5px; //dont erase, this is keeping image on movie screen
+    // height: 37.5px; //dont erase, this is keeping image on movie screen
     bottom: 5px;
     right: 200px;
     background-color: rgba(233, 65, 35, 0.81);

@@ -184,7 +184,7 @@ class Profile extends Component {
                     </NameNButtonStyle>
 
                     <div>
-                        <h2><Link to={`/users/${this.props.match.params.userId}`}> 🔙  </Link></h2> <br />
+                        <h2> <Link to={`/users/${this.props.match.params.userId}`}> 🔙  </Link></h2> <br />
                         <h4>Type in field below to edit Profile </h4>
                         <UsersContainerStyle>
                             <UserStyles>
@@ -200,12 +200,10 @@ class Profile extends Component {
                                     name="image"
                                     value={this.state.user.image}
                                 />
-                                {/* <img src={this.state.user.image} alt="user pic" /> */}
                                 <textarea
                                     onBlur={() => this.handleUpdate()}
                                     onChange={(event) => this.handleChange(event)}
                                     type='password' placeholder='password'
-                                    // value={this.state.user.password} 
                                     name="password"
                                 />
                                 <textarea
@@ -216,7 +214,7 @@ class Profile extends Component {
                                 />
                                 <textarea
                                     onBlur={() => this.handleUpdate()}
-                                    onChange={this.handleChange}
+                                    onChange={(event) => this.handleChange(event)}
                                     name="bio"
                                     value={this.state.user.bio}
                                 />
