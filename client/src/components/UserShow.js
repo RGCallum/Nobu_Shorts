@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import SearchContainer from './SearchContainer'
 
 
 
@@ -98,6 +99,21 @@ const FilmStyles = styled.div`
    border-radius: 5px;
   }
 `
+const UsersBox = styled.div`
+    //  background: rgb(43, 172, 174, 0.5);
+    //  border: inset grey;
+     padding: 20px;
+//   border-radius: 5px;
+//   border: inset 5;
+//   width: 40%;
+//   height: 80%;
+// margin: auto;
+//   background-image: url('/images/filmstripHoriz.png');
+//   background-size: contain;
+//   background-position: top;
+//   background-repeat:no-repeat;
+  
+`
 
 const NewFilmButton = styled.button`
   background: #1d355763;
@@ -184,8 +200,6 @@ class UserShow extends Component {
     }
 
     componentDidMount() {
-        // make an api call to get one single user
-        // On the server URL is '/api/users/:userId'
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}`).then(res => {
             console.log(res.data)
@@ -246,7 +260,7 @@ class UserShow extends Component {
         return (
             <div>
                 <BkgdColors>
-                    <br />
+                    <UsersBox>
                     <NameNButtonStyle>
                         <h1>{this.state.user.username}'s Films </h1><br />
                         <img src={this.state.user.image} alt="film pic" /><br />
@@ -263,6 +277,10 @@ class UserShow extends Component {
                             Add a New Film
                         </NewFilmButton>
                     </FilmEditButton>
+                    <br/>
+                    <SearchContainer />
+
+                    </UsersBox>
                     <div> <br />
                         <FilmsContainerStyle>
                             {this.state.films.map(film => {
