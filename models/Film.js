@@ -5,7 +5,7 @@ const Film = new Schema({
     name: String,
     image: String,
     link: String,
-    synopsis: String,
+    tagline: String,
     role: String,
     type: String,
     year: Number,

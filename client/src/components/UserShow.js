@@ -174,7 +174,7 @@ class UserShow extends Component {
             name: '',
             image: '',
             link: '',
-            synopsis: '',
+            tagline: '',
             role: '',
             type: '',
             year: '',
@@ -291,7 +291,7 @@ class UserShow extends Component {
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
-                                            name="synopsis" value={film.synopsis} placeholder='Edit Synopsis'
+                                            name="tagline" value={film.tagline} placeholder='Edit tagline'
                                         /> <br/>
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
