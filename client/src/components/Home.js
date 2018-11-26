@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 
 const BkgdColors = styled.div`
 padding: 110px;
+width: 67vw;
+height: 66vh;
 background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif')
 `
 const ImgStyles = styled.div`
@@ -25,7 +27,12 @@ width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
 //   margin-top: 100;
-}`
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+}
+`
 
 const TextStyles = styled.div`
     z-index: 1;
@@ -151,8 +158,6 @@ const HoverButton = styled.div`
 display: flex ;
 justify-content: center ;
 button {
-    // background-image: url('https://media1.tenor.com/images/50088e71808305ae9af6f56246d60136/tenor.gif?itemid=11660643');
-    // height: 37.5px; //dont erase, this is keeping image on movie screen
     bottom: 5px;
     right: 200px;
     background-color: rgba(233, 65, 35, 0.81);
