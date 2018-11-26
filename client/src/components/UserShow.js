@@ -283,11 +283,11 @@ class UserShow extends Component {
                                             value={film.name}
                                         /></h2>
                                        <h4> 
-                                       <textarea
+                                       <h6><textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
                                             name="link" placeholder='Click Image to watch film or add new weblink here'
-                                        /> 
+                                        /></h6> 
                                         <textarea
                                             onBlur={() => this.handleUpdate(film._id)}
                                             onChange={(event) => this.handleChange(event, film._id)}
