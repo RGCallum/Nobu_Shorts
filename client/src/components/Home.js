@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const BkgdColors = styled.div`
 padding: 110px;
-width: 67vw;
-height: 66vh;
+// width: 67vw;
+// height: 66vh;
 background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif');
 background-repeat: no-repeat;
 background-position: fixed;
