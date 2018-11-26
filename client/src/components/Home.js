@@ -7,7 +7,9 @@ const BkgdColors = styled.div`
 padding: 110px;
 width: 67vw;
 height: 66vh;
-background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif')
+background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif');
+background-repeat: no-repeat;
+background-position: fixed;
 `
 const ImgStyles = styled.div`
 display:flex;
