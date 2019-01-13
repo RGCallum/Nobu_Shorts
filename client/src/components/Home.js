@@ -204,6 +204,9 @@ class Home extends Component {
                         <br /><br /><br /><br /><br />
                         <BkgdColors>
 <br/>
+<br/>
+<br/>
+<br/>
                             <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br /> <br />
                             <ASpace> <h2>A space for Independent Filmmakers to display their work.</h2></ASpace>  <br /> <br />
                             <Although><h2>Although your film may be created with "No Budget" </h2></Although><br /> <br />
