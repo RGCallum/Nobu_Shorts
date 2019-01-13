@@ -5,11 +5,17 @@ import { Link } from 'react-router-dom'
 
 const BkgdColors = styled.div`
 padding: 110px;
-// width: 67vw;
-// height: 66vh;
-background-image: url('https://media.giphy.com/media/Bza8zdYENvGfu/giphy.gif');
+width: 100vw;
+height: 100vh;
+background-image: url('https://thumbs.gfycat.com/SaltyPowerlessFulmar-size_restricted.gif');
 background-repeat: no-repeat;
-background-position: fixed;
+background-position: center;
+background-size: cover;
+img{
+  z-index: -1;
+
+}
+
 `
 const ImgStyles = styled.div`
 display:flex;
@@ -22,7 +28,7 @@ justify-content: center;
 img{
     
   position: relative;
-  z-index: -2;
+  z-index: 1;
 //   height: 114vh;
 width: 100vw;
 
@@ -70,8 +76,8 @@ animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) 0.8s b
 `
 const ASpace = styled.div`
 display: flex ;
-justify-content: flex-start ;
-margin-left: -5%;
+justify-content: center ;
+// margin-left: 5%;
 font-size:5vw;
 animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 2s both;
 @keyframes slide-in-blurred-right {
@@ -93,8 +99,8 @@ animation: slide-in-blurred-right 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 2s
 
 const Although = styled.div`
 display: flex ;
-justify-content: flex-end ;
-margin-left: 8%;
+justify-content: center ;
+// margin-left: 8%;
 font-size:5vw;
 animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 3.5s both;
 @keyframes slide-in-blurred-left {
@@ -156,6 +162,12 @@ animation: bounce-in-top 1.1s 5s both;
   }
 
 `
+
+const Text = styled.div`
+// width: 50%;
+
+`
+
 const HoverButton = styled.div`
 display: flex ;
 justify-content: center ;
@@ -191,6 +203,7 @@ class Home extends Component {
                     <TextStyles>
                         <br /><br /><br /><br /><br />
                         <BkgdColors>
+<br/>
                             <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br /> <br />
                             <ASpace> <h2>A space for Independent Filmmakers to display their work.</h2></ASpace>  <br /> <br />
                             <Although><h2>Although your film may be created with "No Budget" </h2></Although><br /> <br />

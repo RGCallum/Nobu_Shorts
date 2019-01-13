@@ -9,6 +9,8 @@ const NavBarStyles = styled.div`
 display: flex ;
 flex-direction: row ;
 justify-content: flex-end ;
+position: relative;
+z-index: 100;
 padding: 10px;
 background: black;
 font-weight: 400;
