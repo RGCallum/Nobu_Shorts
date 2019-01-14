@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const BkgdColors = styled.div`
 padding: 110px;
-width: 100vw;
-height: 100vh;
+width: 75vw;
+height: 75vh;
 background-image: url('https://thumbs.gfycat.com/SaltyPowerlessFulmar-size_restricted.gif');
 background-repeat: no-repeat;
 background-position: center;
@@ -15,6 +15,48 @@ img{
   z-index: -1;
 
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px){
+h1{
+  font-size: 3vw;
+}
+h2{
+  font-size: 2.5vw;
+}
+
+width: 75vw;
+height: 75vh;
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 425px){
+  h1{
+    margin-top: -50%;
+    font-size: 5vw;
+  }
+  h2{
+    font-size: 4vw;
+  }
+width: 100vw;
+height: 100vh;
+  
+  }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  width: 75vw;
+  height: 45vh;
+}
+
+
+//ipad pro
+    @media only screen and (width: 1024px)   {
+       h1 { 
+       margin-top: 40%;     
+        }
+
+        }
+
+        
 
 `
 const ImgStyles = styled.div`
@@ -29,17 +71,30 @@ img{
     
   position: relative;
   z-index: 1;
-//   height: 114vh;
-width: 100vw;
-
+  width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
-//   margin-top: 100;
+  
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  img{
+    background-size: 190%;
+    width: 190%;
+    height: 190%;
+  }
+
 
 }
+
+@media only screen and (min-width : 320px) and (max-width : 425px) {
+  img{
+    background-size: cover;
+    width: 150%;
+    height: 100vh;
+  }
+}
+
 `
 
 const TextStyles = styled.div`
@@ -203,10 +258,8 @@ class Home extends Component {
                     <TextStyles>
                         <br /><br /><br /><br /><br />
                         <BkgdColors>
-<br/>
-<br/>
-<br/>
-<br/>
+
+
                             <Welcome><h1> Welcome to NoBu Filmmakers </h1></Welcome> <br /> <br />
                             <ASpace> <h2>A space for Independent Filmmakers to display their work.</h2></ASpace>  <br /> <br />
                             <Although><h2>Although your film may be created with "No Budget" </h2></Although><br /> <br />
