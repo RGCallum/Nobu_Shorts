@@ -163,7 +163,7 @@ class Profile extends Component {
     }
 
     handleUpdate = () => {
-        const userId = this.props.match.params.id
+        const userId = this.props.match.params.userId
         const updatedUser = this.state.user
         axios.patch(`/api/users/${userId}`, updatedUser)
             .then((res) => {
