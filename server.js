@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const routes = require('./routes/index')
 const io = require('socket.io')();
+const path = require('path');
 
 mongoose.connect(process.env.MONGODB_URI); 
 
