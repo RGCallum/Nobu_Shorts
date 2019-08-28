@@ -33,10 +33,11 @@ app.use(express.json());
 
 app.use(express.static(__dirname + '/client/build/'));
 
+app.use('/', routes)
+
 // app.get('/', (req, res) => {
 //     res.sendFile(__dirname + '/client/build/index.html')
 // })
-app.use('/', routes)
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, '/client/build/index.html'), function(err) {
