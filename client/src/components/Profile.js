@@ -163,6 +163,7 @@ class Profile extends Component {
     }
 
     handleUpdate = () => {
+      // finally fixed this by adding userId after like 8months smh
         const userId = this.props.match.params.userId
         const updatedUser = this.state.user
         axios.patch(`/api/users/${userId}`, updatedUser)
